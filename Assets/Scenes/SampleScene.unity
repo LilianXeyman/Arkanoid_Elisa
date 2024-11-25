@@ -526,7 +526,7 @@ MonoBehaviour:
   posicionY2: 88
   posicionY3: -31
   posicionY4: -153
-  posicionX: 818
+  posicionX: 804
   posicionX1: 468
   posicionOpciones: -500
   tiempoEnPartida: {fileID: 2098511244}
