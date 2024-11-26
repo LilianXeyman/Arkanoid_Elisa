@@ -43,13 +43,17 @@ public class VidasYPuntos : MonoBehaviour
             }
             if (pelotaEnJuego == true)
             {
-                if (rb.velocity.magnitude != velBola)
+                if (rb.velocity.magnitude != velBola)//Esto no se si funciona o si está bien
                 {
                     rb.velocity = rb.velocity.normalized * velBola;
                 }
             }
         }
     }
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        rb.velocity=rb.velocity.normalized*velBola;
+    }*/
     public void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Muerte"))
