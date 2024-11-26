@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class BotonesMenu : MonoBehaviour
 {
+    [SerializeField]
+    VidasYPuntos vidasYPuntos;
     //Crear botones Continuar, Nuevo Juego, Opciones, Salir
     //A continuación se pondrán las variables que dependan del control del juego por el menú
     [SerializeField]
@@ -49,6 +51,8 @@ public class BotonesMenu : MonoBehaviour
     float milisegundos=0;
     [SerializeField]
     TextMeshProUGUI tiempoEnPartida;
+    [SerializeField]
+    TextMeshProUGUI tiempoEnPartidaFinal;
 
     //Aquí se escribirán los booleanos del juego
     public bool comienzaElJuego;
@@ -90,6 +94,7 @@ public class BotonesMenu : MonoBehaviour
                 segundos= Mathf.Floor(tiempoTotal % 60);
                 milisegundos = Mathf.Floor(tiempoTotal * 60) % 60;
                 tiempoEnPartida.text = minutos.ToString("00") +" : "+ segundos.ToString("00") +" : "+ milisegundos.ToString("00");
+                tiempoEnPartidaFinal.text= minutos.ToString("00") + " : " + segundos.ToString("00") + " : " + milisegundos.ToString("00");
             }
         }
     }
@@ -136,8 +141,10 @@ public class BotonesMenu : MonoBehaviour
     {
         canvasMenu.SetActive(false);
         canvasJuego.SetActive(true);
+        vidasYPuntos.canvasMuerte.SetActive(false);
         tiempo = true;
         tiempoTotal = 0;
+        vidasYPuntos.cuentaVidas = 1;
     }
     //Botones
     public void Continuar()
