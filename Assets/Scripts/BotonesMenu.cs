@@ -51,8 +51,9 @@ public class BotonesMenu : MonoBehaviour
     TextMeshProUGUI tiempoEnPartida;
 
     //Aquí se escribirán los booleanos del juego
-    bool comienzaElJuego;
-    bool tiempo;
+    public bool comienzaElJuego;
+    public bool tiempo;
+    public bool estaJugando;
     
     void Start()
     {
@@ -115,11 +116,11 @@ public class BotonesMenu : MonoBehaviour
         //Animaciones de los botones de Opciones
         LeanTween.moveX(canvasMenuMenu, 205, 0).setEase(animCurve).setOnComplete(() =>
         {
-            LeanTween.moveX(botonContinuar, 550, 0).setEase(animCurve).setOnComplete(() =>
+            LeanTween.moveX(botonContinuar, 548, 0).setEase(animCurve).setOnComplete(() =>
             {
-                LeanTween.moveX(botonNuevoJuego, 550, 0).setEase(animCurve).setOnComplete(() => {
-                    LeanTween.moveX(botonOpciones, 550, 0).setEase(animCurve).setOnComplete(() => {
-                        LeanTween.moveX(botonSalir, 550, 0).setEase(animCurve);
+                LeanTween.moveX(botonNuevoJuego, 548, 0).setEase(animCurve).setOnComplete(() => {
+                    LeanTween.moveX(botonOpciones, 548, 0).setEase(animCurve).setOnComplete(() => {
+                        LeanTween.moveX(botonSalir, 548, 0).setEase(animCurve);
                     });
                 });
             });
