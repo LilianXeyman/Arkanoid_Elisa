@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VidasYPuntos : MonoBehaviour
 {
@@ -8,11 +9,13 @@ public class VidasYPuntos : MonoBehaviour
     BotonesMenu botonesMenu;
 
     [SerializeField]
-    public int cuentaVidas=1;//Esto se irá modificando en base a los PowerUps
+    public int cuentaVidas=3;//Esto se irá modificando en base a los PowerUps
 
     [SerializeField]
+    Vector3 inpulsoBola;
+    [SerializeField]
     float velBola;
-
+    
     [SerializeField]
     GameObject bola;
 
@@ -25,7 +28,15 @@ public class VidasYPuntos : MonoBehaviour
     [SerializeField]
     public GameObject canvasMuerte;
 
-    bool pelotaEnJuego;
+    [SerializeField]
+    public bool pelotaEnJuego;
+
+    [SerializeField]
+    public float fuerzaRebote = 10f;
+
+    //Para el sistema de vidas
+    [SerializeField]
+    public Image imagen1Vidas, imagen2Vidas, imagen3Vidas;
     void Start()
     {
         rb= GetComponent<Rigidbody>();
@@ -35,11 +46,14 @@ public class VidasYPuntos : MonoBehaviour
     {
         if (botonesMenu.tiempo == true)
         {
-            if (!pelotaEnJuego && Input.GetKeyUp(KeyCode.Space))
+            if (!pelotaEnJuego && Input.GetButtonUp("Jump"))
             {
+                rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
+                Debug.Log("Press Space");
                 pelotaEnJuego = true;
                 transform.parent = null;
-                rb.AddForce(Vector3.up * velBola);//Problemas con el rozamiento. La bola se va frenando.
+                rb.AddForce(new Vector3(5f,10f,0f) * velBola);//Problemas con el rozamiento. La bola se va frenando.
+                //rb.AddForce(inpulsoBola,ForceMode.Impulse );
             }
             if (pelotaEnJuego == true)
             {
@@ -48,6 +62,20 @@ public class VidasYPuntos : MonoBehaviour
                     rb.velocity = rb.velocity.normalized * velBola;
                 }
             }
+        }
+        //Va desactivando las imagenes que representan las vidas
+        if (cuentaVidas ==2)
+        {
+            imagen1Vidas.enabled = false;
+
+        }
+        if (cuentaVidas == 1)
+        {
+            imagen2Vidas.enabled = false;
+        }
+        if (cuentaVidas == 0)
+        {
+            imagen3Vidas.enabled = false;
         }
     }
     /*private void OnCollisionEnter(Collision collision)
@@ -59,23 +87,27 @@ public class VidasYPuntos : MonoBehaviour
         if(other.CompareTag("Muerte"))
         {
             cuentaVidas = cuentaVidas - 1;
-            if (cuentaVidas <= 0)
+            if (cuentaVidas < 3)
             {
                 ReiniciarBola();
-                botonesMenu.tiempo = false;
-                canvasMuerte.SetActive(true);
                 pelotaEnJuego = false;
-            }
-            else 
-            {
-                Debug.Log("No más vidas");  
+                if (cuentaVidas <= 0)
+                {
+                    botonesMenu.tiempo = false;
+                    canvasMuerte.SetActive(true);
+                }
+                else
+                {
+                    Debug.Log("No más vidas");
+                }
             }
         }
     }
-    private void ReiniciarBola()
+    public void ReiniciarBola()
     {
         gameObject.transform.position = new Vector3(883.7f, -137f, 250.9f);
         playerTransform.transform.localPosition = new Vector3(883.7f, -139.6667f, 250.6f);
+        rb.constraints |= RigidbodyConstraints.FreezePositionX;
         if (playerTransform != null)
         {
             transform.SetParent(playerTransform);
@@ -93,4 +125,15 @@ public class VidasYPuntos : MonoBehaviour
     { 
          rb.velocity=new Vector3(1f,1f,0f).normalized*velBola;
     }*/
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            Vector3 normalColision=col.contacts[0].normal;
+            Vector3 direccionRebote = Vector3.Reflect(rb.velocity, normalColision);
+            rb.velocity=direccionRebote.normalized*velBola*fuerzaRebote;
+            /*Vector3 rebote = col.contacts[0].normal * rb.velocity.magnitude;
+            rb.velocity=rebote*fuerzaRebote;*///Rebota raro
+        }
+    }
 }

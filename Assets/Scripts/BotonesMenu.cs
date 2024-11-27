@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.UIElements;
 
@@ -144,7 +145,12 @@ public class BotonesMenu : MonoBehaviour
         vidasYPuntos.canvasMuerte.SetActive(false);
         tiempo = true;
         tiempoTotal = 0;
-        vidasYPuntos.cuentaVidas = 1;
+        vidasYPuntos.cuentaVidas = 3;
+        vidasYPuntos.imagen1Vidas.enabled = true;
+        vidasYPuntos.imagen2Vidas.enabled = true;
+        vidasYPuntos.imagen3Vidas.enabled = true;
+        vidasYPuntos.ReiniciarBola();
+        vidasYPuntos.pelotaEnJuego = false;
     }
     //Botones
     public void Continuar()
