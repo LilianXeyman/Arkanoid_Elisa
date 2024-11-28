@@ -12,6 +12,8 @@ public class BotonesMenu : MonoBehaviour
     //Crear botones Continuar, Nuevo Juego, Opciones, Salir
     //A continuación se pondrán las variables que dependan del control del juego por el menú
     [SerializeField]
+    GameObject canvasInicio;
+    [SerializeField]
     GameObject canvasMenu;
     [SerializeField]
     GameObject canvasMenuMenu;
@@ -62,7 +64,8 @@ public class BotonesMenu : MonoBehaviour
     
     void Start()
     {
-        canvasMenu.SetActive(true);
+        canvasInicio.SetActive(true);
+        canvasMenu.SetActive(false);
         canvasJuego.SetActive(false);
         botonContinuar.SetActive(false);
         canvasOpciones.SetActive(false);
@@ -74,28 +77,39 @@ public class BotonesMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Return))//Mirar esto
         {
-            if (canvasMenu.activeSelf)
+            LeanTween.moveLocalY(canvasInicio, 3000, 2f);
+            canvasMenu.SetActive(true);
+            LeanTween.moveLocalY(canvasMenu, -900, 0f);
+            LeanTween.moveLocalY(canvasMenu, 0, 2f).setOnComplete(() => { 
+                 canvasInicio.SetActive(false);
+            });
+            
+
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                HidePopUp();
+                if (canvasMenu.activeSelf)
+                {
+                    HidePopUp();
+                }
+                else
+                {
+                    ShowPopUp();
+                }
             }
-            else
-            { 
-                ShowPopUp();
-            }
-        }
-        //Para contar el tiempo de la partida
-        if (comienzaElJuego == false)
-        {
-            if (tiempo == true)
+            //Para contar el tiempo de la partida
+            if (comienzaElJuego == false)
             {
-                tiempoTotal = tiempoTotal + Time.deltaTime;
-                minutos = Mathf.Floor((tiempoTotal % 3600) / 60);
-                segundos= Mathf.Floor(tiempoTotal % 60);
-                milisegundos = Mathf.Floor(tiempoTotal * 60) % 60;
-                tiempoEnPartida.text = minutos.ToString("00") +" : "+ segundos.ToString("00") +" : "+ milisegundos.ToString("00");
-                tiempoEnPartidaFinal.text= minutos.ToString("00") + " : " + segundos.ToString("00") + " : " + milisegundos.ToString("00");
+                if (tiempo == true)
+                {
+                    tiempoTotal = tiempoTotal + Time.deltaTime;
+                    minutos = Mathf.Floor((tiempoTotal % 3600) / 60);
+                    segundos = Mathf.Floor(tiempoTotal % 60);
+                    milisegundos = Mathf.Floor(tiempoTotal * 60) % 60;
+                    tiempoEnPartida.text = minutos.ToString("00") + " : " + segundos.ToString("00") + " : " + milisegundos.ToString("00");
+                    tiempoEnPartidaFinal.text = minutos.ToString("00") + " : " + segundos.ToString("00") + " : " + milisegundos.ToString("00");
+                }
             }
         }
     }
@@ -122,11 +136,11 @@ public class BotonesMenu : MonoBehaviour
         //Animaciones de los botones de Opciones
         LeanTween.moveX(canvasMenuMenu, 205, 0).setEase(animCurve).setOnComplete(() =>
         {
-            LeanTween.moveX(botonContinuar, 548, 0).setEase(animCurve).setOnComplete(() =>
+            LeanTween.moveX(botonContinuar, 538, 0).setEase(animCurve).setOnComplete(() =>
             {
-                LeanTween.moveX(botonNuevoJuego, 548, 0).setEase(animCurve).setOnComplete(() => {
-                    LeanTween.moveX(botonOpciones, 548, 0).setEase(animCurve).setOnComplete(() => {
-                        LeanTween.moveX(botonSalir, 548, 0).setEase(animCurve);
+                LeanTween.moveX(botonNuevoJuego, 538, 0).setEase(animCurve).setOnComplete(() => {
+                    LeanTween.moveX(botonOpciones, 538, 0).setEase(animCurve).setOnComplete(() => {
+                        LeanTween.moveX(botonSalir, 538, 0).setEase(animCurve);
                     });
                 });
             });

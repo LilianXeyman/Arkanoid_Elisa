@@ -37,6 +37,24 @@ public class VidasYPuntos : MonoBehaviour
     //Para el sistema de vidas
     [SerializeField]
     public Image imagen1Vidas, imagen2Vidas, imagen3Vidas;
+
+    //Para las vidas de los bloques
+    [SerializeField]
+    public int vidas1Bloques=0;
+    [SerializeField]
+    public int vidas2Bloques=0;
+    [SerializeField]
+    public int vidas3Bloques=0;
+    [SerializeField]
+    public int vidas4Bloques=0;
+    [SerializeField]
+    GameObject bloque1Vida;
+    [SerializeField]
+    GameObject bloque2Vida; 
+    [SerializeField]
+    GameObject bloque3Vida; 
+    [SerializeField]
+    GameObject bloque4Vida;
     void Start()
     {
         rb= GetComponent<Rigidbody>();
@@ -135,5 +153,6 @@ public class VidasYPuntos : MonoBehaviour
             /*Vector3 rebote = col.contacts[0].normal * rb.velocity.magnitude;
             rb.velocity=rebote*fuerzaRebote;*///Rebota raro
         }
+        //rigidbody comprobar vel en y si es menor a ? *10
     }
 }

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Pelota
   - Muerte
+  - Bloque1Vida
+  - Bloque2Vida
+  - Bloque3Vida
+  - Bloque4Vida
   layers:
   - Default
   - TransparentFX
