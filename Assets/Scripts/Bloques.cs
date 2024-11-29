@@ -15,6 +15,9 @@ public class Bloques : MonoBehaviour
     [SerializeField]
     public int puntosBloques;
 
+    [SerializeField]
+    public AudioClip bloqueRotoSFX;
+
     /*private void Awake()
     {
         if (instance == null)
@@ -30,6 +33,7 @@ public class Bloques : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         vidaBloques = vidaBloques - 1;
+        AudioSource.PlayClipAtPoint(bloqueRotoSFX, transform.position);
         puntosBloques = puntosBloques + 100;
         //PuntuacionesLlamar();
         gameObject.GetComponent<MeshRenderer>().material = materiales[vidaBloques];

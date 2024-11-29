@@ -125,3 +125,5 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 0da6c1efa1c85074c81f05a0fd8e6f51, type: 2}
   - {fileID: 2100000, guid: 237d65d71fd41f7458d6af4f920a5432, type: 2}
   - {fileID: 2100000, guid: 5c39d365a62ba0e4e9809bcf38856152, type: 2}
+  puntosBloques: 0
+  bloqueRotoSFX: {fileID: 8300000, guid: d7438a7501f6d584da9add2c0ad96978, type: 3}
