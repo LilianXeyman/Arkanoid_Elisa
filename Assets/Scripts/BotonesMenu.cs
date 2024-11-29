@@ -71,24 +71,30 @@ public class BotonesMenu : MonoBehaviour
         canvasOpciones.SetActive(false);
         comienzaElJuego = true;
         tiempo = false;
-       
+        estaJugando = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))//Mirar esto
+        if (estaJugando == true)
         {
-            LeanTween.moveLocalY(canvasInicio, 3000, 2f);
-            canvasMenu.SetActive(true);
-            LeanTween.moveLocalY(canvasMenu, -900, 0f);
-            LeanTween.moveLocalY(canvasMenu, 0, 2f).setOnComplete(() => { 
-                 canvasInicio.SetActive(false);
-            });
-            
-
-            if (Input.GetKeyDown(KeyCode.Escape))
+            Debug.Log("pulsa enter");
+            if (Input.GetButtonDown("Submit"))//Mirar esto
             {
+                LeanTween.moveLocalY(canvasInicio, 3000, 2f);
+                canvasMenu.SetActive(true);
+                LeanTween.moveLocalY(canvasMenu, -900, 0f);
+                LeanTween.moveLocalY(canvasMenu, 0, 2f).setOnComplete(() =>
+                {
+                    canvasInicio.SetActive(false);
+                });
+            }
+            estaJugando = false;
+        }
+            if (Input.GetButtonDown("Cancel"))
+            {
+                Debug.Log("escape");
                 if (canvasMenu.activeSelf)
                 {
                     HidePopUp();
@@ -111,7 +117,7 @@ public class BotonesMenu : MonoBehaviour
                     tiempoEnPartidaFinal.text = minutos.ToString("00") + " : " + segundos.ToString("00") + " : " + milisegundos.ToString("00");
                 }
             }
-        }
+        
     }
     public void ShowPopUp()
     {
