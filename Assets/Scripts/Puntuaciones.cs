@@ -9,8 +9,8 @@ public class Puntuaciones : MonoBehaviour
 
     // Poner puntuaciones a medida que la pelota rebota en los bloques
     [SerializeField]
-    Puntuaciones puntuaciones;
-    public int puntosBloques;
+    Bloques bloques;
+    //public int puntosBloques;
     [SerializeField]
     public int puntuacion;
     [SerializeField]
@@ -36,7 +36,7 @@ public class Puntuaciones : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        puntuacion = puntuacion + puntosBloques;//Ir añadiendo los PowerUps que dan puntos
+        puntuacion = puntuacion + bloques.puntosBloques;//Ir añadiendo los PowerUps que dan puntos
         puntuacionEnPantalla.text = puntuacion.ToString("000000000");
     }
 }

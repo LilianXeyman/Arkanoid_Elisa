@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bloques : MonoBehaviour
 {
-    //public static Bloques instance;
+    //public static Bloques instance; No le puedo poner el singleton porque no compila
     
     [SerializeField]
     public int vidaBloques;
@@ -41,6 +41,6 @@ public class Bloques : MonoBehaviour
     }
    /* public void PuntuacionesLlamar()
     {
-        //puntosBloques = Puntuaciones.instance.puntosBloques;// De esta forma estoy guardando el resultado del valor de los puntos Bloques para que luego se pueda llamar desde el Script puntuaciones y se vaya actualizando 
+        //puntosBloques = Puntuaciones.instance.puntosBloques;// De esta forma estoy guardando el resultado del valor de los puntos Bloques para que luego se pueda llamar desde el Script puntuaciones y se vaya actualizando//No funciona 
     }*/
 }

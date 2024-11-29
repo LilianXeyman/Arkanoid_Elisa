@@ -55,6 +55,9 @@ public class VidasYPuntos : MonoBehaviour
     GameObject bloque3Vida; 
     [SerializeField]
     GameObject bloque4Vida;
+    //Velocidad de la bola
+    private Vector3 velocidadPrevia;
+    private Vector3 direccionPrevia;
     void Start()
     {
         rb= GetComponent<Rigidbody>();
@@ -70,7 +73,7 @@ public class VidasYPuntos : MonoBehaviour
                 Debug.Log("Press Space");
                 pelotaEnJuego = true;
                 transform.parent = null;
-                rb.AddForce(new Vector3(5f,10f,0f) * velBola);//Problemas con el rozamiento. La bola se va frenando.
+                rb.AddForce(new Vector3(5f, 10f, 0f) * velBola);//Problemas con el rozamiento. La bola se va frenando.
                 //rb.AddForce(inpulsoBola,ForceMode.Impulse );
             }
             if (pelotaEnJuego == true)
@@ -81,6 +84,48 @@ public class VidasYPuntos : MonoBehaviour
                 }
             }
         }
+        //Intento1
+        /*if (botonesMenu.tiempo == true)
+        {
+            if (!pelotaEnJuego && Input.GetButtonUp("Jump"))
+            {
+                rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
+                Debug.Log("Press Space");
+                pelotaEnJuego = true;
+                transform.parent = null;
+                if (velocidadPrevia != Vector3.zero)
+                {
+                    rb.velocity = velocidadPrevia;
+                    rb.velocity = direccionPrevia * velocidadPrevia.magnitude;
+                }
+                else 
+                {
+                    rb.AddForce(new Vector3(5f, 10f, 0f) * velBola, ForceMode.Impulse);//Problemas con el rozamiento. La bola se va frenando.
+                }
+            }
+            if (pelotaEnJuego == true)
+            {
+                if (rb.velocity.magnitude != velBola)//Esto no se si funciona o si está bien
+                {
+                    rb.velocity = rb.velocity.normalized * velBola;
+                }
+            }
+            if (pelotaEnJuego)
+            {
+                rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
+            }
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+            //rb.velocity = Vector3.zero;
+            if (pelotaEnJuego)
+            {
+                 velocidadPrevia = rb.velocity;
+                direccionPrevia = rb.velocity.normalized;
+            }
+        }
+        */
         //Va desactivando las imagenes que representan las vidas
         if (cuentaVidas ==2)
         {
