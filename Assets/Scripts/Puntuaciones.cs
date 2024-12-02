@@ -16,6 +16,13 @@ public class Puntuaciones : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI puntuacionEnPantalla;
 
+    [SerializeField]
+    TextMeshProUGUI puntuacionEnPantallaMuerte;
+    [SerializeField]
+    TextMeshProUGUI puntuacionEnPantallaVictoria;
+
+    public float puntos;
+
     private void Awake()
     {
         if (instance == null)
@@ -32,11 +39,11 @@ public class Puntuaciones : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
-        puntuacion = puntuacion + bloques.puntosBloques;//Ir añadiendo los PowerUps que dan puntos
-        puntuacionEnPantalla.text = puntuacion.ToString("000000000");
+        //Ir añadiendo los PowerUps que dan puntos
+        puntuacionEnPantalla.text = puntos.ToString("000000000");
+        puntuacionEnPantallaMuerte.text = puntos.ToString();
+        puntuacionEnPantallaVictoria.text = puntos.ToString();
     }
 }

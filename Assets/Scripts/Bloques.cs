@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Bloques : MonoBehaviour
 {
     //public static Bloques instance; No le puedo poner el singleton porque no compila
-    
+    float timeCounted = 0.0f;
+
     [SerializeField]
     public int vidaBloques;
 
@@ -18,33 +20,51 @@ public class Bloques : MonoBehaviour
     [SerializeField]
     public AudioClip bloqueRotoSFX;
 
-    /*private void Awake()
+    [SerializeField]
+    TextMeshProUGUI sumaDePuntos;
+
+    //int sumaPuntos=100;
+
+    private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }*/
+        //Configurar la etiqueta
+    }
     //Para detectar las colisiones de la bola con los bloques y cambiar el material
     public void OnCollisionEnter(Collision collision)
     {
         vidaBloques = vidaBloques - 1;
         AudioSource.PlayClipAtPoint(bloqueRotoSFX, transform.position);
-        puntosBloques = puntosBloques + 100;
-        //PuntuacionesLlamar();
+        Puntuaciones.instance.puntos += 100f;
+        timeCounted = 0.5f;
+        // Activar tu gameObject con texto
+
+        //sumaPuntos.SetActive(true);//No funciona por alguna razon con el TextMeshPro
         gameObject.GetComponent<MeshRenderer>().material = materiales[vidaBloques];
         if (vidaBloques <= 0)
         {
             Destroy(gameObject);
         }
-        //Puntuaciones.instance.Puntos();
     }
-   /* public void PuntuacionesLlamar()
-    {
-        //puntosBloques = Puntuaciones.instance.puntosBloques;// De esta forma estoy guardando el resultado del valor de los puntos Bloques para que luego se pueda llamar desde el Script puntuaciones y se vaya actualizando//No funciona 
+    /*IEnumerator apagarSumaPuntos() {
+
+       // GameObject TEXTO = GameObject.Find("Puntos Ganados");
+        GameObject TEXTOINSTANCIADO = Instantiate(sumaDePuntos, TEXTO.transform.position, Quaternion.identity);
+        sumaDePuntos.gameObject.SetActive(true);
+        sumaDePuntos.text = "100";
+        yield return new WaitForSeconds(0.25f);
+        sumaDePuntos.gameObject.SetActive(false);
     }*/
+
+    private void Update()
+    {
+        if (timeCounted > 0f)
+        {
+            timeCounted -= Time.deltaTime;
+        }
+        else
+        {
+            // Desactivar tu gameObject con texto
+
+        }
+    }
 }

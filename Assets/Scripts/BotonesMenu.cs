@@ -60,6 +60,8 @@ public class BotonesMenu : MonoBehaviour
     TextMeshProUGUI tiempoEnPartida;
     [SerializeField]
     TextMeshProUGUI tiempoEnPartidaFinal;
+    [SerializeField]
+    TextMeshProUGUI tiempoEnPartidaFinalVictoria;
 
     //Aquí se escribirán los booleanos del juego
     public bool comienzaElJuego;
@@ -110,7 +112,7 @@ public class BotonesMenu : MonoBehaviour
                 LeanTween.moveLocalY(botonOpciones, -1000, 0);
                 LeanTween.moveLocalY(botonSalir, -1000, 0);
                 LeanTween.moveLocalY(canvasMenuMenu, -1000, 0);
-                LeanTween.moveY(tituloJuego, 580, 0.25f).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
+                LeanTween.moveY(tituloJuego, 540, 0.25f).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
                 {
                     LeanTween.moveLocalY(canvasMenuMenu, -237, tiempoAnimacion).setOnComplete(() =>
                     {
@@ -130,11 +132,11 @@ public class BotonesMenu : MonoBehaviour
                 Debug.Log("escape");
                 if (canvasMenu.activeSelf)
                 {
-                    HidePopUp();
+                HidePopUp();
                 }
                 else
                 {
-                    ShowPopUp();
+                ShowPopUp();
                 }
             }
             //Para contar el tiempo de la partida
@@ -148,7 +150,8 @@ public class BotonesMenu : MonoBehaviour
                     milisegundos = Mathf.Floor(tiempoTotal * 60) % 60;
                     tiempoEnPartida.text = minutos.ToString("00") + " : " + segundos.ToString("00") + " : " + milisegundos.ToString("00");
                     tiempoEnPartidaFinal.text = minutos.ToString("00") + " : " + segundos.ToString("00") + " : " + milisegundos.ToString("00");
-                }
+                    tiempoEnPartidaFinalVictoria.text = minutos.ToString("00") + " : " + segundos.ToString("00") + " : " + milisegundos.ToString("00");
+            }
             }
     }
     public void ShowPopUp()
@@ -180,7 +183,10 @@ public class BotonesMenu : MonoBehaviour
             {
                 LeanTween.moveX(botonNuevoJuego, 538, 0).setEase(animCurve).setOnComplete(() => {
                     LeanTween.moveX(botonOpciones, 538, 0).setEase(animCurve).setOnComplete(() => {
-                        LeanTween.moveX(botonSalir, 538, 0).setEase(animCurve);
+                        LeanTween.moveX(botonSalir, 538, 0).setEase(animCurve).setOnComplete(() =>
+                        {
+                            //Time.timeScale = 0f;
+                        });
                     });
                 });
             });
@@ -191,6 +197,7 @@ public class BotonesMenu : MonoBehaviour
         tiempo = true;
         canvasMenu.SetActive(false);
         canvasJuego.SetActive(true);
+        //Time.timeScale = 1f;
     }
     public void Reestablecer()
     {
