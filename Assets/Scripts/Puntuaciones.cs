@@ -10,6 +10,12 @@ public class Puntuaciones : MonoBehaviour
     // Poner puntuaciones a medida que la pelota rebota en los bloques
     [SerializeField]
     Bloques bloques;
+
+    [SerializeField]
+    BotonesMenu botonesMenu;
+
+    [SerializeField]
+    VidasYPuntos vidasYPuntos;
     //public int puntosBloques;
     [SerializeField]
     public int puntuacion;
@@ -21,7 +27,12 @@ public class Puntuaciones : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI puntuacionEnPantallaVictoria;
 
+    private int blocksLeft;
+
     public float puntos;
+
+    [SerializeField]
+    public GameObject canvasVictoria;
 
     private void Awake()
     {
@@ -37,7 +48,9 @@ public class Puntuaciones : MonoBehaviour
 
     void Start()
     {
-        
+        canvasVictoria.SetActive(false);
+        blocksLeft = GameObject.FindGameObjectsWithTag("Bloques").Length;
+        Debug.Log(blocksLeft);
     }
     void Update()
     {
@@ -45,5 +58,20 @@ public class Puntuaciones : MonoBehaviour
         puntuacionEnPantalla.text = puntos.ToString("000000000");
         puntuacionEnPantallaMuerte.text = puntos.ToString();
         puntuacionEnPantallaVictoria.text = puntos.ToString();
+    }
+    public void BlockDestroyed()
+    {
+        blocksLeft--;
+        Debug.Log(blocksLeft);
+        if (blocksLeft <= 0)
+        { 
+           botonesMenu.tiempo = false;
+           canvasVictoria.SetActive(true);
+            if (canvasVictoria == true)
+            { 
+               vidasYPuntos.canvasMuerte.SetActive(false);
+            }
+            
+        }
     }
 }

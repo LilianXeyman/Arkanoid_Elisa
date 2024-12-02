@@ -542,6 +542,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueVerde1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4722407552799213623, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: materiales.Array.size
       value: 5
@@ -646,6 +650,10 @@ PrefabInstance:
     - target: {fileID: 7575399140808705042, guid: 07821f42be81c2a4c8f9ba6acdb8f4f0, type: 3}
       propertyPath: m_Name
       value: BloqueNaranja1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7575399140808705042, guid: 07821f42be81c2a4c8f9ba6acdb8f4f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -889,6 +897,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &99091000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 99091001}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &99091001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99091000}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 980.92285, y: 149.58514, z: -1.704273}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &108731277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -940,6 +979,10 @@ PrefabInstance:
     - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: m_Name
       value: BloqueVerde1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4722407552799213623, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: materiales.Array.size
@@ -1242,6 +1285,10 @@ PrefabInstance:
     - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: m_Name
       value: BloqueVerde1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4722407552799213623, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: materiales.Array.size
@@ -1839,6 +1886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueVioleta1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2025015474041479433, guid: a5e64494b07ebb740b54afb21b7f309b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2106,6 +2157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueAzul1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1166638157524940166, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1980294751974387516, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 239.60004
@@ -2337,6 +2392,10 @@ PrefabInstance:
     - target: {fileID: 1166638157524940166, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
       propertyPath: m_Name
       value: BloqueAzul1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166638157524940166, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1980294751974387516, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3567,6 +3626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueVerde1
       objectReference: {fileID: 0}
+    - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4722407552799213623, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: materiales.Array.size
       value: 5
@@ -3647,6 +3710,10 @@ PrefabInstance:
     - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: m_Name
       value: BloqueVerde1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4722407552799213623, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: materiales.Array.size
@@ -4124,11 +4191,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloques: {fileID: 0}
+  botonesMenu: {fileID: 144535465}
+  vidasYPuntos: {fileID: 0}
   puntuacion: 0
   puntuacionEnPantalla: {fileID: 682691099}
   puntuacionEnPantallaMuerte: {fileID: 1630700685}
   puntuacionEnPantallaVictoria: {fileID: 292562474}
   puntos: 0
+  canvasVictoria: {fileID: 315907608}
 --- !u!4 &904392512
 Transform:
   m_ObjectHideFlags: 0
@@ -4317,6 +4387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueNaranja1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7575399140808705042, guid: 07821f42be81c2a4c8f9ba6acdb8f4f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4425,6 +4499,10 @@ PrefabInstance:
     - target: {fileID: 1166638157524940166, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
       propertyPath: m_Name
       value: BloqueAzul1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166638157524940166, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1980294751974387516, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4931,6 +5009,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueNaranja1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7575399140808705042, guid: 07821f42be81c2a4c8f9ba6acdb8f4f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4992,6 +5074,10 @@ PrefabInstance:
     - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: m_Name
       value: BloqueVerde1 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4722407552799213623, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: materiales.Array.size
@@ -5073,6 +5159,10 @@ PrefabInstance:
     - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: m_Name
       value: BloqueVerde1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4722407552799213623, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: materiales.Array.size
@@ -5298,6 +5388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueVioleta1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2025015474041479433, guid: a5e64494b07ebb740b54afb21b7f309b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5500,6 +5594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueVioleta1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2025015474041479433, guid: a5e64494b07ebb740b54afb21b7f309b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5636,6 +5734,10 @@ PrefabInstance:
     - target: {fileID: 2025015474041479433, guid: a5e64494b07ebb740b54afb21b7f309b, type: 3}
       propertyPath: m_Name
       value: BloqueVioleta1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025015474041479433, guid: a5e64494b07ebb740b54afb21b7f309b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7269621787992852922, guid: a5e64494b07ebb740b54afb21b7f309b, type: 3}
       propertyPath: sumaDePuntos
@@ -5841,6 +5943,10 @@ PrefabInstance:
     - target: {fileID: 2025015474041479433, guid: a5e64494b07ebb740b54afb21b7f309b, type: 3}
       propertyPath: m_Name
       value: BloqueVioleta1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025015474041479433, guid: a5e64494b07ebb740b54afb21b7f309b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6300,6 +6406,10 @@ PrefabInstance:
     - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: m_Name
       value: BloqueVerde1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4722407552799213623, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: materiales.Array.size
@@ -6880,6 +6990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueVioleta1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2025015474041479433, guid: a5e64494b07ebb740b54afb21b7f309b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6960,6 +7074,10 @@ PrefabInstance:
     - target: {fileID: 7575399140808705042, guid: 07821f42be81c2a4c8f9ba6acdb8f4f0, type: 3}
       propertyPath: m_Name
       value: BloqueNaranja1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7575399140808705042, guid: 07821f42be81c2a4c8f9ba6acdb8f4f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8109,6 +8227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueVerde1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4722407552799213623, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: materiales.Array.size
       value: 5
@@ -8149,6 +8271,10 @@ PrefabInstance:
     - target: {fileID: 1166638157524940166, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
       propertyPath: m_Name
       value: BloqueAzul1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166638157524940166, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1980294751974387516, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8931,6 +9057,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueAzul1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1166638157524940166, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1980294751974387516, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 234.70001
@@ -9051,6 +9181,10 @@ PrefabInstance:
     - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: m_Name
       value: BloqueVerde1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350468208821876524, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4722407552799213623, guid: 48bb8ca5b45546947a9ebccd83aa956f, type: 3}
       propertyPath: materiales.Array.size
@@ -9675,6 +9809,10 @@ PrefabInstance:
     - target: {fileID: 1166638157524940166, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
       propertyPath: m_Name
       value: BloqueAzul1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166638157524940166, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1980294751974387516, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10570,11 +10708,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1188607203226796225, guid: 5b1197f3d1244334b8626f483f729c8e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 650.6316
+      value: 420.3179
       objectReference: {fileID: 0}
     - target: {fileID: 1188607203226796225, guid: 5b1197f3d1244334b8626f483f729c8e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 247.9233
+      value: 158.3
       objectReference: {fileID: 0}
     - target: {fileID: 1188607203226796225, guid: 5b1197f3d1244334b8626f483f729c8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10606,11 +10744,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1188607203226796225, guid: 5b1197f3d1244334b8626f483f729c8e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1564
+      value: 1640
       objectReference: {fileID: 0}
     - target: {fileID: 1188607203226796225, guid: 5b1197f3d1244334b8626f483f729c8e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -601
+      value: -598
       objectReference: {fileID: 0}
     - target: {fileID: 1188607203226796225, guid: 5b1197f3d1244334b8626f483f729c8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10786,3 +10924,4 @@ SceneRoots:
   - {fileID: 904392512}
   - {fileID: 925086632}
   - {fileID: 404071061}
+  - {fileID: 99091001}

@@ -204,6 +204,7 @@ public class BotonesMenu : MonoBehaviour
         canvasMenu.SetActive(false);
         canvasJuego.SetActive(true);
         vidasYPuntos.canvasMuerte.SetActive(false);
+        Puntuaciones.instance.canvasVictoria.SetActive(false);
         tiempo = true;
         tiempoTotal = 0;
         vidasYPuntos.cuentaVidas = 3;
@@ -212,6 +213,7 @@ public class BotonesMenu : MonoBehaviour
         vidasYPuntos.imagen3Vidas.enabled = true;
         vidasYPuntos.ReiniciarBola();
         vidasYPuntos.pelotaEnJuego = false;
+        Puntuaciones.instance.puntos = 0;
     }
     //Botones
     public void Continuar()

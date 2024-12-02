@@ -9,13 +9,13 @@ public class VidasYPuntos : MonoBehaviour
     BotonesMenu botonesMenu;
 
     [SerializeField]
-    public int cuentaVidas=3;//Esto se irá modificando en base a los PowerUps
+    public int cuentaVidas = 3;//Esto se irá modificando en base a los PowerUps
 
     [SerializeField]
     Vector3 inpulsoBola;
     [SerializeField]
     float velBola;
-    
+
     [SerializeField]
     GameObject bola;
 
@@ -40,19 +40,19 @@ public class VidasYPuntos : MonoBehaviour
 
     //Para las vidas de los bloques
     [SerializeField]
-    public int vidas1Bloques=0;
+    public int vidas1Bloques = 0;
     [SerializeField]
-    public int vidas2Bloques=0;
+    public int vidas2Bloques = 0;
     [SerializeField]
-    public int vidas3Bloques=0;
+    public int vidas3Bloques = 0;
     [SerializeField]
-    public int vidas4Bloques=0;
+    public int vidas4Bloques = 0;
     [SerializeField]
     GameObject bloque1Vida;
     [SerializeField]
-    GameObject bloque2Vida; 
+    GameObject bloque2Vida;
     [SerializeField]
-    GameObject bloque3Vida; 
+    GameObject bloque3Vida;
     [SerializeField]
     GameObject bloque4Vida;
     //Velocidad de la bola
@@ -60,7 +60,7 @@ public class VidasYPuntos : MonoBehaviour
     private Vector3 direccionPrevia;
     void Start()
     {
-        rb= GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         canvasMuerte.SetActive(false);
     }
     void Update()
@@ -121,13 +121,13 @@ public class VidasYPuntos : MonoBehaviour
             //rb.velocity = Vector3.zero;
             if (pelotaEnJuego)
             {
-                 velocidadPrevia = rb.velocity;
+                velocidadPrevia = rb.velocity;
                 direccionPrevia = rb.velocity.normalized;
             }
         }
         */
         //Va desactivando las imagenes que representan las vidas
-        if (cuentaVidas ==2)
+        if (cuentaVidas == 2)
         {
             imagen1Vidas.enabled = false;
 
@@ -147,17 +147,18 @@ public class VidasYPuntos : MonoBehaviour
     }*/
     public void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Muerte"))
+        if (other.CompareTag("Muerte"))
         {
             cuentaVidas = cuentaVidas - 1;
             if (cuentaVidas < 3)
             {
                 ReiniciarBola();
                 pelotaEnJuego = false;
-                if (cuentaVidas <= 0)
+                if (cuentaVidas <= 0) //Cuando sale la pantalla de victoria se sigue moviendo la bola haciendo que pierdas las 3 vidas y te salga la pantalla de muerte
                 {
                     botonesMenu.tiempo = false;
                     canvasMuerte.SetActive(true);
+                    
                 }
                 else
                 {
@@ -176,7 +177,7 @@ public class VidasYPuntos : MonoBehaviour
             transform.SetParent(playerTransform);
             Debug.Log("Bola reasignada");
         }
-        else 
+        else
         {
             Debug.Log("No asignación");
         }
@@ -192,12 +193,28 @@ public class VidasYPuntos : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            Vector3 normalColision=col.contacts[0].normal;
+            Vector3 normalColision = col.contacts[0].normal;
             Vector3 direccionRebote = Vector3.Reflect(rb.velocity, normalColision);
-            rb.velocity=direccionRebote.normalized*velBola*fuerzaRebote;
+            rb.velocity = direccionRebote.normalized * velBola * fuerzaRebote;
             /*Vector3 rebote = col.contacts[0].normal * rb.velocity.magnitude;
             rb.velocity=rebote*fuerzaRebote;*///Rebota raro
         }
+        VelocityFix();
         //rigidbody comprobar vel en y si es menor a ? *10
+    }
+    private void VelocityFix()
+    {
+        float velocityDelta = 10f;
+        float minVelocity = 5f;
+        if(Mathf.Abs(rb.velocity.x) < minVelocity)
+        {
+            velocityDelta = Random.value < 10f ? velocityDelta:-velocityDelta;
+            rb.velocity += new Vector3(velocityDelta, 0f, 0f);
+        }
+        if(Mathf.Abs(rb.velocity.y) < minVelocity)
+        {
+            velocityDelta = Random.value < 10f ? velocityDelta : -velocityDelta;
+            rb.velocity += new Vector3(0f, velocityDelta, 0f);
+        }
     }
 }

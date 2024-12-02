@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8782710483657255096}
   m_Layer: 0
   m_Name: BloqueNaranja1
-  m_TagString: Bloque3Vida
+  m_TagString: Bloques
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,4 +126,3 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5c39d365a62ba0e4e9809bcf38856152, type: 2}
   puntosBloques: 0
   bloqueRotoSFX: {fileID: 8300000, guid: 359bf42654f9e4741baf01332dea5b01, type: 3}
-  sumaDePuntos: {fileID: 7537242369080534042, guid: 5b1197f3d1244334b8626f483f729c8e, type: 3}

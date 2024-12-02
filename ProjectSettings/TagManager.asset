@@ -10,6 +10,7 @@ TagManager:
   - Bloque2Vida
   - Bloque3Vida
   - Bloque4Vida
+  - Bloques
   layers:
   - Default
   - TransparentFX
