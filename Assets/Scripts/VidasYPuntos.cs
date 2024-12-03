@@ -58,6 +58,9 @@ public class VidasYPuntos : MonoBehaviour
     //Velocidad de la bola
     private Vector3 velocidadPrevia;
     private Vector3 direccionPrevia;
+
+    Vector2 direccionBola;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -157,7 +160,7 @@ public class VidasYPuntos : MonoBehaviour
                 if (cuentaVidas <= 0) //Cuando sale la pantalla de victoria se sigue moviendo la bola haciendo que pierdas las 3 vidas y te salga la pantalla de muerte
                 {
                     botonesMenu.tiempo = false;
-                    canvasMuerte.SetActive(true); 
+                    canvasMuerte.SetActive(true);
                 }
                 else
                 {
@@ -205,15 +208,26 @@ public class VidasYPuntos : MonoBehaviour
     {
         float velocityDelta = 10f;
         float minVelocity = 5f;
-        if(Mathf.Abs(rb.velocity.x) < minVelocity)
+        if (Mathf.Abs(rb.velocity.x) < minVelocity)
         {
-            velocityDelta = Random.value < 10f ? velocityDelta:-velocityDelta;
+            velocityDelta = Random.value < 10f ? velocityDelta : -velocityDelta;
             rb.velocity += new Vector3(velocityDelta, 0f, 0f);
         }
-        if(Mathf.Abs(rb.velocity.y) < minVelocity)
+        if (Mathf.Abs(rb.velocity.y) < minVelocity)
         {
             velocityDelta = Random.value < 10f ? velocityDelta : -velocityDelta;
             rb.velocity += new Vector3(0f, velocityDelta, 0f);
         }
+    }
+
+    public void BolaPausa()
+    {
+        direccionBola = rb.velocity.normalized;
+        rb.velocity = Vector2.zero;
+    }
+
+    public void BolaReanudar()
+    {
+        rb.velocity = direccionBola * velBola;
     }
 }

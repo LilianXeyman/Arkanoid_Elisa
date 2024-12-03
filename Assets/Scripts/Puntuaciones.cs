@@ -16,6 +16,9 @@ public class Puntuaciones : MonoBehaviour
 
     [SerializeField]
     VidasYPuntos vidasYPuntos;
+
+    [SerializeField]
+    MaxPuntuacion maxPuntuacion;
     //public int puntosBloques;
     [SerializeField]
     public int puntuacion;
@@ -29,7 +32,7 @@ public class Puntuaciones : MonoBehaviour
 
     private int blocksLeft;
 
-    public float puntos;
+    public int puntos;
 
     [SerializeField]
     public GameObject canvasVictoria;
@@ -63,11 +66,12 @@ public class Puntuaciones : MonoBehaviour
     {
         //blocksLeft--;
         Debug.Log(PosicionesYCreacionBloques.instance.bloques.childCount);
-        if (PosicionesYCreacionBloques.instance.bloques.childCount <= 0)
+        if (PosicionesYCreacionBloques.instance.bloques.childCount <= 1)
         { 
            botonesMenu.tiempo = false;
            canvasVictoria.SetActive(true);
-            PosicionesYCreacionBloques.instance.GenerarNiveles();    
+            vidasYPuntos.BolaPausa();
+           PosicionesYCreacionBloques.instance.GenerarNiveles();
         }
     }
 }

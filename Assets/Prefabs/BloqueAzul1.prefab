@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66f60d1582a1e8418f470d521d8fcf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPuntuacion: {fileID: 0}
   vidaBloques: 1
   materiales:
   - {fileID: 2100000, guid: 0750fc4f1f4d9334ab9d21e280a03e15, type: 2}
@@ -126,3 +127,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5c39d365a62ba0e4e9809bcf38856152, type: 2}
   puntosBloques: 0
   bloqueRotoSFX: {fileID: 8300000, guid: 359bf42654f9e4741baf01332dea5b01, type: 3}
+  puntos1: {fileID: 4865473674237502346, guid: 225437ce72bf13e4496e7eb84d1e2fd8, type: 3}
+  puntos2: {fileID: 5065243669597631132, guid: 188d8932ec3c395459fde9c67a72f4d9, type: 3}
+  puntos3: {fileID: 24580636961034637, guid: 0b8909060ac4cc34ab7e7d0cfbe5373c, type: 3}
+  puntos4: {fileID: 2673950546860208245, guid: 333d7b5b5c6ff554cb1ae0677ae2c736, type: 3}

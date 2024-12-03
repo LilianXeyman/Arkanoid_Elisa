@@ -15,6 +15,9 @@ public class PosicionesYCreacionBloques : MonoBehaviour
 
     [SerializeField]
     public Transform bloques;
+
+    [SerializeField]
+    int bloquesAGenerar;
     // Start is called before the first frame update
 
     private void Awake()
@@ -38,12 +41,20 @@ public class PosicionesYCreacionBloques : MonoBehaviour
 
     public void GenerarNiveles()
     {
-        for (int i = 0; i < 20 ; i++)
+        for (int i = 0; i < bloquesAGenerar ; i++)
         {
             GameObject selectedPrefab = prebasBloques[Random.Range(0, prebasBloques.Length)];
             GameObject selectedPos = posiciones[Random.Range(0, posiciones.Length)];
-            GameObject createdObject = Instantiate(selectedPrefab, new Vector3(selectedPos.transform.position.x, selectedPos.transform.position.y, selectedPos.transform.position.z), Quaternion.identity);
-            createdObject.transform.parent = bloques;
+            if (selectedPos.activeSelf == true)
+            {
+                bloquesAGenerar++;
+            }
+            else
+            {
+                selectedPos.SetActive(true);
+                GameObject createdObject = Instantiate(selectedPrefab, new Vector3(selectedPos.transform.position.x, selectedPos.transform.position.y, selectedPos.transform.position.z), Quaternion.identity);
+                createdObject.transform.parent = bloques;
+            }
         }
     }
 }

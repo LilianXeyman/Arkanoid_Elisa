@@ -9,6 +9,9 @@ public class BotonesMenu : MonoBehaviour
 {
     [SerializeField]
     VidasYPuntos vidasYPuntos;
+
+    [SerializeField]
+    MaxPuntuacion maxPuntuacion;
     //Crear botones Continuar, Nuevo Juego, Opciones, Salir
     //A continuación se pondrán las variables que dependan del control del juego por el menú
     /*[SerializeField]
@@ -163,6 +166,7 @@ public class BotonesMenu : MonoBehaviour
     }
     public void ShowPopUp()
     {
+        vidasYPuntos.BolaPausa();
         tiempo = false;
         botonContinuar.SetActive (true);
         canvasMenu.SetActive (true);
@@ -202,6 +206,7 @@ public class BotonesMenu : MonoBehaviour
     }
     public void HidePopUp()
     {
+        vidasYPuntos.BolaReanudar();
         tiempo = true;
         canvasMenu.SetActive(false);
         canvasJuego.SetActive(true);
@@ -236,6 +241,7 @@ public class BotonesMenu : MonoBehaviour
         recordsPoner = true;
         PosicionesYCreacionBloques.instance.GenerarNiveles();
         Reestablecer();
+        maxPuntuacion.puntuacionActual=0;
     }
     public void Opciones()
     {

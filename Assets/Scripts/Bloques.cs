@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bloques : MonoBehaviour
 {
     //public static Bloques instance; No le puedo poner el singleton porque no compila
     //float timeCounted = 0.0f;
+    [SerializeField]
+    MaxPuntuacion maxPuntuacion;
+
+    [SerializeField]
+    GameManager gameManager;
 
     [SerializeField]
     public int vidaBloques;
@@ -49,7 +55,9 @@ public class Bloques : MonoBehaviour
     {
         vidaBloques = vidaBloques - 1;
         AudioSource.PlayClipAtPoint(bloqueRotoSFX, transform.position);
-        Puntuaciones.instance.puntos += 100f;
+        Puntuaciones.instance.puntos += 100;
+        MaxPuntuacion.Instance.AñadirPuntos(MaxPuntuacion.Instance.record);
+        GameManager.instance.Sumar100();
         //MostrarPuntos();//Llama a la función MostrarPuntos en donde te cambia el tiempo en el que aparece en pantalla la suma y lo activa
         //Profe
         //timeCounted = 0.5f;
