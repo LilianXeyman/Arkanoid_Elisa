@@ -49,8 +49,8 @@ public class Puntuaciones : MonoBehaviour
     void Start()
     {
         canvasVictoria.SetActive(false);
-        blocksLeft = GameObject.FindGameObjectsWithTag("Bloques").Length;
-        Debug.Log(blocksLeft);
+        //blocksLeft = GameObject.FindGameObjectsWithTag("Bloques").Length;
+        //Debug.Log(blocksLeft);
     }
     void Update()
     {
@@ -61,17 +61,13 @@ public class Puntuaciones : MonoBehaviour
     }
     public void BlockDestroyed()
     {
-        blocksLeft--;
-        Debug.Log(blocksLeft);
-        if (blocksLeft <= 0)
+        //blocksLeft--;
+        Debug.Log(PosicionesYCreacionBloques.instance.bloques.childCount);
+        if (PosicionesYCreacionBloques.instance.bloques.childCount <= 0)
         { 
            botonesMenu.tiempo = false;
            canvasVictoria.SetActive(true);
-            if (canvasVictoria == true)
-            { 
-               vidasYPuntos.canvasMuerte.SetActive(false);
-            }
-            
+            PosicionesYCreacionBloques.instance.GenerarNiveles();    
         }
     }
 }

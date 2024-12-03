@@ -234,6 +234,7 @@ public class BotonesMenu : MonoBehaviour
     { 
         comienzaElJuego=false;
         recordsPoner = true;
+        PosicionesYCreacionBloques.instance.GenerarNiveles();
         Reestablecer();
     }
     public void Opciones()
