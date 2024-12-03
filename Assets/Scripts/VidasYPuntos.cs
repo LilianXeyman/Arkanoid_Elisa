@@ -157,8 +157,7 @@ public class VidasYPuntos : MonoBehaviour
                 if (cuentaVidas <= 0) //Cuando sale la pantalla de victoria se sigue moviendo la bola haciendo que pierdas las 3 vidas y te salga la pantalla de muerte
                 {
                     botonesMenu.tiempo = false;
-                    canvasMuerte.SetActive(true);
-                    
+                    canvasMuerte.SetActive(true); 
                 }
                 else
                 {

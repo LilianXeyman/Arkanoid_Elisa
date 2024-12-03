@@ -67,6 +67,11 @@ public class BotonesMenu : MonoBehaviour
     public bool comienzaElJuego;
     public bool tiempo;
     public bool estaJugando;
+    public bool recordsPoner;
+
+    //Para controlar el apartado de Records
+    [SerializeField]
+    GameObject records;
     
     void Start()
     {
@@ -75,6 +80,7 @@ public class BotonesMenu : MonoBehaviour
         canvasJuego.SetActive(false);
         botonContinuar.SetActive(false);
         canvasOpciones.SetActive(false);
+        records.SetActive(false);
         //Pantalla inicio
         botonNuevoJuego.SetActive(false);
         botonOpciones.SetActive(false);
@@ -84,6 +90,7 @@ public class BotonesMenu : MonoBehaviour
         comienzaElJuego = true;
         tiempo = false;
         estaJugando = true;
+        recordsPoner = false;
     }
 
     // Update is called once per frame
@@ -112,7 +119,7 @@ public class BotonesMenu : MonoBehaviour
                 LeanTween.moveLocalY(botonOpciones, -1000, 0);
                 LeanTween.moveLocalY(botonSalir, -1000, 0);
                 LeanTween.moveLocalY(canvasMenuMenu, -1000, 0);
-                LeanTween.moveY(tituloJuego, 540, 0.25f).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
+                LeanTween.moveY(tituloJuego, 750, 0.25f).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>//750
                 {
                     LeanTween.moveLocalY(canvasMenuMenu, -237, tiempoAnimacion).setOnComplete(() =>
                     {
@@ -151,7 +158,7 @@ public class BotonesMenu : MonoBehaviour
                     tiempoEnPartida.text = minutos.ToString("00") + " : " + segundos.ToString("00") + " : " + milisegundos.ToString("00");
                     tiempoEnPartidaFinal.text = minutos.ToString("00") + " : " + segundos.ToString("00") + " : " + milisegundos.ToString("00");
                     tiempoEnPartidaFinalVictoria.text = minutos.ToString("00") + " : " + segundos.ToString("00") + " : " + milisegundos.ToString("00");
-            }
+                }
             }
     }
     public void ShowPopUp()
@@ -162,22 +169,23 @@ public class BotonesMenu : MonoBehaviour
         canvasJuego.SetActive(false);
         canvasOpciones.SetActive (false); 
         tituloJuego.SetActive (false);
+        canvasMenuMenu.SetActive (true);
         //Animaciones de los botones
-        LeanTween.moveY(canvasMenuMenu, 285, 0);//Corregir posicion en clase
-        LeanTween.moveLocalY(botonContinuar, -900f, 0);
-        LeanTween.moveLocalY(botonNuevoJuego, -900, 0);
-        LeanTween.moveLocalY(botonOpciones, -900, 0);
-        LeanTween.moveLocalY(botonSalir, -900, 0);
-        LeanTween.moveLocalY(botonContinuar, posicionY1, tiempoAnimacion).setEase(animCurve).setOnComplete(()=>
+        LeanTween.moveY(canvasMenuMenu, 400, 0);//Corregir posicion en clase
+        LeanTween.moveY(botonContinuar, -900f, 0);
+        LeanTween.moveY(botonNuevoJuego, -900, 0);
+        LeanTween.moveY(botonOpciones, -900, 0);
+        LeanTween.moveY(botonSalir, -900, 0);
+        LeanTween.moveY(botonContinuar, posicionY1, tiempoAnimacion).setEase(animCurve).setOnComplete(()=>
         {
-            LeanTween.moveLocalY(botonNuevoJuego, posicionY2, tiempoAnimacion).setEase(animCurve).setOnComplete( ()=> {
-                LeanTween.moveLocalY(botonOpciones, posicionY3, tiempoAnimacion).setEase(animCurve).setOnComplete(()=> {
-                    LeanTween.moveLocalY(botonSalir, posicionY4, tiempoAnimacion).setEase(animCurve);
+            LeanTween.moveY(botonNuevoJuego, posicionY2, tiempoAnimacion).setEase(animCurve).setOnComplete( ()=> {
+                LeanTween.moveY(botonOpciones, posicionY3, tiempoAnimacion).setEase(animCurve).setOnComplete(()=> {
+                    LeanTween.moveY(botonSalir, posicionY4, tiempoAnimacion).setEase(animCurve);
                 });
             });
         });
         //Animaciones de los botones de Opciones
-        LeanTween.moveX(canvasMenuMenu, 205, 0).setEase(animCurve).setOnComplete(() =>
+        /*LeanTween.moveX(canvasMenuMenu, 205, 0).setEase(animCurve).setOnComplete(() =>
         {
             LeanTween.moveX(botonContinuar, 538, 0).setEase(animCurve).setOnComplete(() =>
             {
@@ -190,7 +198,7 @@ public class BotonesMenu : MonoBehaviour
                     });
                 });
             });
-        });
+        });*/
     }
     public void HidePopUp()
     {
@@ -225,6 +233,7 @@ public class BotonesMenu : MonoBehaviour
     public void NuevoJuego()
     { 
         comienzaElJuego=false;
+        recordsPoner = true;
         Reestablecer();
     }
     public void Opciones()
@@ -253,5 +262,39 @@ public class BotonesMenu : MonoBehaviour
         #else
         Application.Quit();
         #endif
+    }
+    public void Records()
+    {
+        Debug.Log("Entra?");
+        records.SetActive(true);
+        botonNuevoJuego.SetActive(false);
+        botonOpciones.SetActive(false);
+        botonSalir.SetActive(false);
+        canvasMenuMenu.SetActive(false);
+        if (recordsPoner == true)
+        {
+            LeanTween.moveLocalY(records,100, 0f);
+            botonContinuar.SetActive(false);
+        }
+        else
+        {
+            botonContinuar.SetActive(false);
+        }
+    }
+    public void Volver()
+    {
+        botonNuevoJuego.SetActive(true);
+        if (recordsPoner == true)
+        {
+            botonContinuar.SetActive(true);
+        }
+        else 
+        {
+            botonContinuar.SetActive(false);
+        }
+        botonOpciones.SetActive(true);
+        botonSalir.SetActive(true);
+        canvasMenuMenu.SetActive(true);
+        records.SetActive(false);
     }
 }
