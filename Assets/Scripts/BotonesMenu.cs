@@ -232,6 +232,7 @@ public class BotonesMenu : MonoBehaviour
     public void Continuar()
     {
         tiempo = true;
+        vidasYPuntos.BolaReanudar();
         canvasMenu.SetActive(false);
         canvasJuego.SetActive(true);
     }

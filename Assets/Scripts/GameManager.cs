@@ -10,10 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public Image puntos1, puntos2, puntos3, puntos4;
 
-    public float tiempoPuntos1 = 0;
+    /*public float tiempoPuntos1 = 0;
     public float tiempoPuntos2 = 0;
     public float tiempoPuntos3 = 0;
-    public float tiempoPuntos4 = 0;
+    public float tiempoPuntos4 = 0;*/
 
     [SerializeField]
     LeanTweenType animacionImagenes;
