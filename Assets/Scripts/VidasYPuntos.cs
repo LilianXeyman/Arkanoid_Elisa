@@ -38,6 +38,10 @@ public class VidasYPuntos : MonoBehaviour
     [SerializeField]
     public Image imagen1Vidas, imagen2Vidas, imagen3Vidas;
 
+    //Sonido
+    public AudioSource musicaFondo;
+    public AudioClip playerSound, blockSound, wallSound, ballResSound;
+
     //Para las vidas de los bloques
     [SerializeField]
     public int vidas1Bloques = 0;
@@ -167,6 +171,8 @@ public class VidasYPuntos : MonoBehaviour
                     Debug.Log("No más vidas");
                 }
             }
+            musicaFondo.clip = ballResSound;
+            musicaFondo.Play();
         }
     }
     public void ReiniciarBola()
@@ -200,9 +206,22 @@ public class VidasYPuntos : MonoBehaviour
             rb.velocity = direccionRebote.normalized * velBola * fuerzaRebote;
             /*Vector3 rebote = col.contacts[0].normal * rb.velocity.magnitude;
             rb.velocity=rebote*fuerzaRebote;*///Rebota raro
+            //Para el sonido
+            musicaFondo.clip = playerSound;
+            musicaFondo.Play();
         }
         VelocityFix();
         //rigidbody comprobar vel en y si es menor a ? *10
+        if (col.gameObject.CompareTag("Bloques"))
+        {
+            musicaFondo.clip = blockSound;
+            musicaFondo.Play();
+        }
+        if (col.gameObject.CompareTag("Paredes"))
+        {
+            musicaFondo.clip = wallSound;
+            musicaFondo.Play();
+        }
     }
     private void VelocityFix()
     {

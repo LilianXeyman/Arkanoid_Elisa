@@ -12,6 +12,7 @@ TagManager:
   - Bloque4Vida
   - Bloques
   - Pos
+  - Paredes
   layers:
   - Default
   - TransparentFX

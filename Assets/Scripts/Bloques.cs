@@ -24,8 +24,8 @@ public class Bloques : MonoBehaviour
     public int puntosBloques;
 
     //Para la música
-    [SerializeField]
-    public AudioClip bloqueRotoSFX;
+    /*[SerializeField]
+    public AudioClip bloqueRotoSFX;*/
 
     //public AudioSource audioSource;
 
@@ -54,7 +54,7 @@ public class Bloques : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         vidaBloques = vidaBloques - 1;
-        AudioSource.PlayClipAtPoint(bloqueRotoSFX, transform.position);
+        //AudioSource.PlayClipAtPoint(bloqueRotoSFX, transform.position);
         Puntuaciones.instance.puntos += 100;
         MaxPuntuacion.Instance.AñadirPuntos(MaxPuntuacion.Instance.record);
         GameManager.instance.Sumar100();

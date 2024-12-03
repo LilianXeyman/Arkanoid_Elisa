@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 31701641}
   m_Layer: 0
   m_Name: Paredes
-  m_TagString: Untagged
+  m_TagString: Paredes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8446,7 +8446,7 @@ GameObject:
   - component: {fileID: 1003337504}
   m_Layer: 0
   m_Name: Paredes (1)
-  m_TagString: Untagged
+  m_TagString: Paredes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14208,6 +14208,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670946331}
   m_CullTransparentMesh: 1
+--- !u!1 &1672445610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1672445612}
+  - component: {fileID: 1672445611}
+  m_Layer: 0
+  m_Name: AudioChoques
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1672445611
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672445610}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.33
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 186
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1672445612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672445610}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 606.0569, y: 378.9081, z: 2.6557717}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1674074887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1980294751974387516, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
@@ -16860,7 +16988,7 @@ GameObject:
   - component: {fileID: 1935929595}
   m_Layer: 0
   m_Name: Paredes (2)
-  m_TagString: Untagged
+  m_TagString: Paredes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18975,6 +19103,14 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1998997913689049820, guid: a385d4799c64cbd48bc9e9dc841c277d, type: 3}
+      propertyPath: wallSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4361ec58b542c3b48b33f27ebbe68b87, type: 3}
+    - target: {fileID: 1998997913689049820, guid: a385d4799c64cbd48bc9e9dc841c277d, type: 3}
+      propertyPath: blockSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 99c488dc314db00479427ca8c0791786, type: 3}
+    - target: {fileID: 1998997913689049820, guid: a385d4799c64cbd48bc9e9dc841c277d, type: 3}
       propertyPath: bloque1Vida
       value: 
       objectReference: {fileID: 1166638157524940166, guid: 135d30efc62890a4aacfc1046b3beae5, type: 3}
@@ -18998,6 +19134,18 @@ PrefabInstance:
       propertyPath: cuentaVidas
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1998997913689049820, guid: a385d4799c64cbd48bc9e9dc841c277d, type: 3}
+      propertyPath: musicaFondo
+      value: 
+      objectReference: {fileID: 1672445611}
+    - target: {fileID: 1998997913689049820, guid: a385d4799c64cbd48bc9e9dc841c277d, type: 3}
+      propertyPath: playerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 42415205491f0bf4881fea41e799da13, type: 3}
+    - target: {fileID: 1998997913689049820, guid: a385d4799c64cbd48bc9e9dc841c277d, type: 3}
+      propertyPath: ballResSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 61bcd633c7bb4384fa2c41f536051018, type: 3}
     - target: {fileID: 1998997913689049820, guid: a385d4799c64cbd48bc9e9dc841c277d, type: 3}
       propertyPath: canvasMuerte
       value: 
@@ -19116,3 +19264,4 @@ SceneRoots:
   - {fileID: 1848304553}
   - {fileID: 14956717}
   - {fileID: 1886781323}
+  - {fileID: 1672445612}
