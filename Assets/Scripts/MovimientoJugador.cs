@@ -33,10 +33,10 @@ public class MovimientoJugador : MonoBehaviour
         if (botonesMenu.tiempo == true)
         {
             float movement = -Input.GetAxis("Horizontal");
-            float newPosX = transform.position.x + movement * velJugador * Time.deltaTime;
+            float newPosX = transform.position.x + movement * velJugador;// * Time.deltaTime;
             newPosX = Mathf.Clamp(newPosX, min, max);//Clamp hace las multiplicaciones
             //transform.position = new Vector3(newPosX, transform.position.y, transform.position.z);
-            paloRb.velocity = new Vector3(movement*velJugador*Time.deltaTime, 0, 0);//Si pongo el Time*deltaTime va con lag. Preguntar si se puede quitar
+            paloRb.velocity = new Vector3(movement*velJugador, 0, 0);//Si pongo el Time*deltaTime va con lag. Preguntar si se puede quitar
         }
     }
 }

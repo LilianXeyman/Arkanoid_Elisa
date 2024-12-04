@@ -74,7 +74,7 @@ public class Bloques : MonoBehaviour
         timeCounted = 0.5f;
         // Activar tu gameObject con texto
     }
-    /*IEnumerator apagarSumaPuntos() 
+    IEnumerator apagarSumaPuntos() 
     {
        // GameObject TEXTO = GameObject.Find("Puntos Ganados");
         GameObject TEXTOINSTANCIADO = Instantiate(sumaDePuntos, TEXTO.transform.position, Quaternion.identity);

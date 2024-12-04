@@ -248,7 +248,12 @@ public class BotonesMenu : MonoBehaviour
     public void Opciones()
     {
         //Botones menu
-        LeanTween.moveX(canvasMenuMenu, posicionX1, tiempoAnimacion).setEase(animCurve).setOnComplete(() =>
+        canvasMenuMenu.SetActive(false);
+        botonContinuar.SetActive(false);
+        botonOpciones.SetActive(false);
+        botonNuevoJuego.SetActive(false);
+        botonSalir.SetActive(false);
+        /*LeanTween.moveX(canvasMenuMenu, posicionX1, tiempoAnimacion).setEase(animCurve).setOnComplete(() =>
         {
             LeanTween.moveX(botonContinuar, posicionX, tiempoAnimacion).setEase(animCurve).setOnComplete(() =>
             {   
@@ -258,11 +263,42 @@ public class BotonesMenu : MonoBehaviour
                     });
                 });
             });
-        });
+        });*/
         //Botones Opciones
         canvasOpciones.SetActive(true);
-        LeanTween.moveLocalX(canvasOpciones, -900f, 0);
-        LeanTween.moveLocalX(canvasOpciones, posicionOpciones, tiempoAnimacion).setEase(animCurve);
+        //LeanTween.moveLocalX(canvasOpciones, -900f, 0);
+        //LeanTween.moveLocalX(canvasOpciones, posicionOpciones, tiempoAnimacion).setEase(animCurve);
+    }
+    public void CerrarOpciones()
+    {
+        canvasMenuMenu.SetActive(true);
+        botonOpciones.SetActive(true);
+        botonNuevoJuego.SetActive(true);
+        botonSalir.SetActive(true);
+        records.SetActive(false);
+        canvasOpciones.SetActive(false);
+        tituloJuego.SetActive(false);
+        if (recordsPoner == true)
+        {
+            botonContinuar.SetActive(true);
+        }
+        else
+        {
+            botonContinuar.SetActive(false);
+        }
+        LeanTween.moveY(canvasMenuMenu, 400, 0);//Corregir posicion en clase
+        LeanTween.moveY(botonContinuar, -900f, 0);
+        LeanTween.moveY(botonNuevoJuego, -900, 0);
+        LeanTween.moveY(botonOpciones, -900, 0);
+        LeanTween.moveY(botonSalir, -900, 0);
+        LeanTween.moveY(botonContinuar, posicionY1, tiempoAnimacion).setEase(animCurve).setOnComplete(() =>
+        {
+            LeanTween.moveY(botonNuevoJuego, posicionY2, tiempoAnimacion).setEase(animCurve).setOnComplete(() => {
+                LeanTween.moveY(botonOpciones, posicionY3, tiempoAnimacion).setEase(animCurve).setOnComplete(() => {
+                    LeanTween.moveY(botonSalir, posicionY4, tiempoAnimacion).setEase(animCurve);
+                });
+            });
+        });
     }
     public void Salir()
     {
@@ -276,6 +312,7 @@ public class BotonesMenu : MonoBehaviour
     {
         Debug.Log("Entra?");
         records.SetActive(true);
+        canvasOpciones.SetActive(false);
         botonNuevoJuego.SetActive(false);
         botonOpciones.SetActive(false);
         botonSalir.SetActive(false);
@@ -292,18 +329,7 @@ public class BotonesMenu : MonoBehaviour
     }
     public void Volver()
     {
-        botonNuevoJuego.SetActive(true);
-        if (recordsPoner == true)
-        {
-            botonContinuar.SetActive(true);
-        }
-        else 
-        {
-            botonContinuar.SetActive(false);
-        }
-        botonOpciones.SetActive(true);
-        botonSalir.SetActive(true);
-        canvasMenuMenu.SetActive(true);
         records.SetActive(false);
+        canvasOpciones.SetActive(true);
     }
 }
