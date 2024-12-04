@@ -13,6 +13,7 @@ TagManager:
   - Bloques
   - Pos
   - Paredes
+  - SlowBall
   layers:
   - Default
   - TransparentFX

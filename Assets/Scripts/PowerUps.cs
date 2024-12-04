@@ -8,6 +8,9 @@ public class PowerUps : MonoBehaviour
 
     [SerializeField]
     VidasYPuntos vidasYPuntos;
+
+    [SerializeField]
+    float duracion=0;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -28,15 +31,17 @@ public class PowerUps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void SlowBall(float duracion=10)
-    {
-        vidasYPuntos.velBola = 20;
+        //Para el PowerUpSlowBall
         duracion=duracion-Time.deltaTime;
         if (duracion <= 0)
         {
+            Debug.Log("Restablecer velocidad");
             vidasYPuntos.velBola = 30;
         }
+    }
+    public void SlowBall()
+    {
+        duracion = 5;
+        vidasYPuntos.velBola = 20;
     }
 }

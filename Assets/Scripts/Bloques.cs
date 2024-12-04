@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class Bloques : MonoBehaviour
 {
     //Para la creación de PowerUps
+    /*[SerializeField]
+    public GameObject powerUpSlowBall;*/
     [SerializeField]
-    GameObject powerUpSlowBall;
-    [SerializeField]
-    float probPowerUpSlowBall = 0.2f;
+    float probPowerUpSlowBall = 0.03f;
     //public static Bloques instance; No le puedo poner el singleton porque no compila
     [SerializeField]
     MaxPuntuacion maxPuntuacion;
@@ -47,7 +47,8 @@ public class Bloques : MonoBehaviour
     {
         if (Random.value <= probPowerUpSlowBall)
         {
-            Instantiate(powerUpSlowBall, transform.position,Quaternion.identity);
+            //Instantiate(powerUpSlowBall, transform.position,Quaternion.identity);
+            MovimientoJugador.Instance.slowBall = Instantiate(MovimientoJugador.Instance.powerUpSlowBall, transform.position, Quaternion.identity);
         }
     }
 }

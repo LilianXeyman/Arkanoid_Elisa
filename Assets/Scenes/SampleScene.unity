@@ -2839,6 +2839,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190223859}
   m_CullTransparentMesh: 1
+--- !u!1 &196949806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 196949808}
+  - component: {fileID: 196949807}
+  m_Layer: 0
+  m_Name: Scriptbloques
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &196949807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196949806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66f60d1582a1e8418f470d521d8fcf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpSlowBall: {fileID: 0}
+  probPowerUpSlowBall: 0.03
+  maxPuntuacion: {fileID: 0}
+  gameManager: {fileID: 0}
+  vidaBloques: 0
+  materiales: []
+  puntosBloques: 0
+--- !u!4 &196949808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196949806}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 858.0556, y: -106.411865, z: 255.58604}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &217049270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6167,6 +6218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078dc990a340ad84d87ee1364a4bddeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpSlowBall: {fileID: 97772981657588427, guid: 5789b1dc482397a4f873bb9897a1c999, type: 3}
   botonesMenu: {fileID: 144535465}
   movimientoX: 0
   velJugador: 30
@@ -7207,6 +7259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31986ce946c23714bb60dd218fe8da3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidasYPuntos: {fileID: 893101892}
+  duracion: 0
 --- !u!4 &816608890
 Transform:
   m_ObjectHideFlags: 0
@@ -16978,6 +17032,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUpSlowBall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 97772981657588427, guid: 5789b1dc482397a4f873bb9897a1c999, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1840028053462790511, guid: 5789b1dc482397a4f873bb9897a1c999, type: 3}
       propertyPath: m_LocalPosition.x
       value: 937.6657
@@ -20691,3 +20749,4 @@ SceneRoots:
   - {fileID: 1672445612}
   - {fileID: 816608890}
   - {fileID: 1776208226}
+  - {fileID: 196949808}

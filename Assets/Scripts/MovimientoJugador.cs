@@ -5,6 +5,12 @@ using UnityEngine;
 public class MovimientoJugador : MonoBehaviour
 {
     public static MovimientoJugador Instance;
+    /*[SerializeField]
+    Bloques bloques;*/
+    [SerializeField]
+    public GameObject powerUpSlowBall;
+
+    public GameObject slowBall;
     // Variables para el movimiento del jugador
     [SerializeField]
     BotonesMenu botonesMenu;
@@ -56,6 +62,8 @@ public class MovimientoJugador : MonoBehaviour
         if (other.CompareTag("SlowBall"))
         {
             PowerUps.Instance.SlowBall();
+            //bloques.powerUpSlowBall.SetActive(false);
+            slowBall.SetActive(false);
         }
     }
 }
