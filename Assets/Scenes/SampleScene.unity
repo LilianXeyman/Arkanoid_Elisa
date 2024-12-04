@@ -14754,7 +14754,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 20ce706d21a81e44f9605767dca07b1b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.33
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -16837,7 +16837,7 @@ MonoBehaviour:
   - {fileID: 7575399140808705042, guid: 07821f42be81c2a4c8f9ba6acdb8f4f0, type: 3}
   - {fileID: 2025015474041479433, guid: a5e64494b07ebb740b54afb21b7f309b, type: 3}
   bloques: {fileID: 664729223}
-  bloquesAGenerar: 30
+  bloquesAGenerar: 25
 --- !u!4 &1848304553
 Transform:
   m_ObjectHideFlags: 0
