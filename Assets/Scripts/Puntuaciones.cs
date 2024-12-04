@@ -70,8 +70,8 @@ public class Puntuaciones : MonoBehaviour
         { 
            botonesMenu.tiempo = false;
            canvasVictoria.SetActive(true);
-            vidasYPuntos.BolaPausa();
-           PosicionesYCreacionBloques.instance.GenerarNiveles();
+           vidasYPuntos.BolaPausa();
+           //PosicionesYCreacionBloques.instance.GenerarNiveles();
         }
     }
 }

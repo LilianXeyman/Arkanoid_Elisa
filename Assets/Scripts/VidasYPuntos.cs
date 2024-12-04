@@ -161,7 +161,7 @@ public class VidasYPuntos : MonoBehaviour
             {
                 ReiniciarBola();
                 pelotaEnJuego = false;
-                if (cuentaVidas <= 0) //Cuando sale la pantalla de victoria se sigue moviendo la bola haciendo que pierdas las 3 vidas y te salga la pantalla de muerte
+                if (cuentaVidas <= 0) 
                 {
                     botonesMenu.tiempo = false;
                     canvasMuerte.SetActive(true);
@@ -192,11 +192,6 @@ public class VidasYPuntos : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
     }
-    //Para mantener la velocidad cte en la pelota
-    /*private void EstablecerVelocidadInicial()
-    { 
-         rb.velocity=new Vector3(1f,1f,0f).normalized*velBola;
-    }*/
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Player"))

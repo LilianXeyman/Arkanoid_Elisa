@@ -83,8 +83,4 @@ public class Bloques : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         sumaDePuntos.gameObject.SetActive(false);
     }*/
-    public void GenerarBloques()
-    { 
-    
-    }
 }
