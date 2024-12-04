@@ -251,6 +251,10 @@ public class BotonesMenu : MonoBehaviour
     public void NivelesInfinitos()
     {
         cuentaNivelesInfinitos = cuentaNivelesInfinitos + 1;
+        /*if (cuentaNivelesInfinitos >= 10)
+        {
+            vidasYPuntos.difucultad2 = 1;
+        }*/
         cambiarNumNivel.text="Nivel "+cuentaNivelesInfinitos.ToString();
         comienzaElJuego = false;
         recordsPoner = true;

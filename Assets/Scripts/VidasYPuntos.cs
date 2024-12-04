@@ -63,6 +63,10 @@ public class VidasYPuntos : MonoBehaviour
     private Vector3 velocidadPrevia;
     private Vector3 direccionPrevia;
 
+    //Para el aumento de la dificultad
+    [SerializeField]
+    public int difucultad2 = 1;
+
     Vector2 direccionBola;
 
     void Start()
@@ -200,7 +204,7 @@ public class VidasYPuntos : MonoBehaviour
         {
             Vector3 normalColision = col.contacts[0].normal;
             Vector3 direccionRebote = Vector3.Reflect(rb.velocity, normalColision);
-            rb.velocity = direccionRebote.normalized * velBola * fuerzaRebote;
+            rb.velocity = direccionRebote.normalized * velBola* fuerzaRebote;
             /*Vector3 rebote = col.contacts[0].normal * rb.velocity.magnitude;
             rb.velocity=rebote*fuerzaRebote;*///Rebota raro
             //Para el sonido
