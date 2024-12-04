@@ -60,7 +60,7 @@ public class PosicionesYCreacionBloques : MonoBehaviour
             if (selectedPos.activeSelf == true)
             {
                 bloquesAGenerar++;
-                if (bloquesAGenerar >= 200)
+                if (bloquesAGenerar >= 80)
                 {
                     Debug.Log("límite");
                     bloquesAGenerar = 25;

@@ -22,7 +22,7 @@ public class MenuOpciones : MonoBehaviour
     }
     public void CambiarVolumenEfectos(float volumen)
     {
-        efectosDeSonido.SetFloat("Volumen", volumen);
+        efectosDeSonido.SetFloat("AudioEfectos", volumen);
     }
     // Start is called before the first frame update
     void Start()

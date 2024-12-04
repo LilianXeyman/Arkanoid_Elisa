@@ -256,16 +256,12 @@ public class BotonesMenu : MonoBehaviour
         recordsPoner = true;
         canvasMenu.SetActive(false);
         canvasJuego.SetActive(true);
-        LeanTween.scale(numeroNivel, Vector3.one, 0.5f).setEase(animCurve).setOnComplete(() => {
+        LeanTween.scale(numeroNivel, Vector3.one, 1.5f).setEase(animCurve).setOnComplete(() => {
             LeanTween.scale(numeroNivel, Vector3.zero, 0.5f);
         });
         vidasYPuntos.canvasMuerte.SetActive(false);
         Puntuaciones.instance.canvasVictoria.SetActive(false);
         tiempo = true;
-        vidasYPuntos.cuentaVidas = 3;
-        vidasYPuntos.imagen1Vidas.enabled = true;
-        vidasYPuntos.imagen2Vidas.enabled = true;
-        vidasYPuntos.imagen3Vidas.enabled = true;
         vidasYPuntos.ReiniciarBola();
         vidasYPuntos.pelotaEnJuego = false;
         PosicionesYCreacionBloques.instance.GenerarNiveles();

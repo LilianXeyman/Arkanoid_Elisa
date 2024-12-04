@@ -1363,8 +1363,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1207673924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.6666667, y: 0}
-  m_AnchorMax: {x: 0.6666667, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.2999878, y: 0.3000002}
   m_SizeDelta: {x: 30.2225, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1575,7 +1575,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 80502339}
   m_Direction: 0
   m_MinValue: -40
-  m_MaxValue: 20
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -1746,7 +1746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &92961912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2575,7 +2575,7 @@ MonoBehaviour:
   records: {fileID: 1447105344}
   cuentaNivelesInfinitos: 1
   numeroNivel: {fileID: 1014248827}
-  cambiarNumNivel: {fileID: 0}
+  cambiarNumNivel: {fileID: 338951415}
 --- !u!4 &144535466
 Transform:
   m_ObjectHideFlags: 0
@@ -7903,7 +7903,7 @@ RectTransform:
   m_Father: {fileID: 2113230220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.6666667, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 2.5, y: 0}
   m_SizeDelta: {x: 5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8301,7 +8301,7 @@ RectTransform:
   m_Father: {fileID: 2033153827}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.6666667, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 2.5, y: 0}
   m_SizeDelta: {x: 5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14424,8 +14424,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1451246990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.6666667, y: 0}
-  m_AnchorMax: {x: 0.6666667, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.2999878, y: 0.3000002}
   m_SizeDelta: {x: 30.2225, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15517,13 +15517,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 20ce706d21a81e44f9605767dca07b1b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 186
+  Priority: 112
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
