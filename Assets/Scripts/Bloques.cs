@@ -12,7 +12,7 @@ public class Bloques : MonoBehaviour
     [SerializeField]
     float probPowerUpSlowBall = 0.03f;
     [SerializeField]
-    float probPowerUpMasPuntos = 0.5f;
+    float probPowerUpMasPuntos = 0.03f;
     //public static Bloques instance; No le puedo poner el singleton porque no compila
     [SerializeField]
     MaxPuntuacion maxPuntuacion;

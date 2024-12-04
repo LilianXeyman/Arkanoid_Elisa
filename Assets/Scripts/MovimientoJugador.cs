@@ -68,13 +68,13 @@ public class MovimientoJugador : MonoBehaviour
         {
             PowerUps.Instance.SlowBall();
             //bloques.powerUpSlowBall.SetActive(false);
-            slowBall.SetActive(false);
+            other.gameObject.SetActive(false);
         }
         if (other.CompareTag("MasPuntos"))
         {
             PowerUps.Instance.MasPuntos();
             Debug.Log("Entra en funcion + Puntos");
-            slowBall.SetActive(false);
+            other.gameObject.SetActive(false);
         }
     }
 }
