@@ -11,6 +11,11 @@ public class MovimientoJugador : MonoBehaviour
     public GameObject powerUpSlowBall;
 
     public GameObject slowBall;
+
+    [SerializeField]
+    public GameObject powerUpMasPuntos;
+
+    public GameObject masPuntos;
     // Variables para el movimiento del jugador
     [SerializeField]
     BotonesMenu botonesMenu;
@@ -63,6 +68,12 @@ public class MovimientoJugador : MonoBehaviour
         {
             PowerUps.Instance.SlowBall();
             //bloques.powerUpSlowBall.SetActive(false);
+            slowBall.SetActive(false);
+        }
+        if (other.CompareTag("MasPuntos"))
+        {
+            PowerUps.Instance.MasPuntos();
+            Debug.Log("Entra en funcion + Puntos");
             slowBall.SetActive(false);
         }
     }

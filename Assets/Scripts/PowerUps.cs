@@ -10,6 +10,9 @@ public class PowerUps : MonoBehaviour
     VidasYPuntos vidasYPuntos;
 
     [SerializeField]
+    GameObject quinientos;
+
+    [SerializeField]
     float duracion=0;
     // Start is called before the first frame update
     private void Awake()
@@ -25,7 +28,7 @@ public class PowerUps : MonoBehaviour
     }
     void Start()
     {
-        
+        LeanTween.scale(quinientos, Vector3.zero, 0);
     }
 
     // Update is called once per frame
@@ -43,5 +46,14 @@ public class PowerUps : MonoBehaviour
     {
         duracion = 5;
         vidasYPuntos.velBola = 20;
+    }
+    public void MasPuntos()
+    {
+        Debug.Log("500 puntos +");
+        Puntuaciones.instance.puntos += 500;
+        LeanTween.scale(quinientos, Vector3.one, 0.5f).setEase(LeanTweenType.easeOutQuint).setOnComplete(() =>
+        {
+            LeanTween.scale(quinientos, Vector3.zero, 0.1f).setEase(LeanTweenType.easeOutQuint);
+        });
     }
 }

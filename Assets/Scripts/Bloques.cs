@@ -11,6 +11,8 @@ public class Bloques : MonoBehaviour
     public GameObject powerUpSlowBall;*/
     [SerializeField]
     float probPowerUpSlowBall = 0.03f;
+    [SerializeField]
+    float probPowerUpMasPuntos = 0.5f;
     //public static Bloques instance; No le puedo poner el singleton porque no compila
     [SerializeField]
     MaxPuntuacion maxPuntuacion;
@@ -49,6 +51,10 @@ public class Bloques : MonoBehaviour
         {
             //Instantiate(powerUpSlowBall, transform.position,Quaternion.identity);
             MovimientoJugador.Instance.slowBall = Instantiate(MovimientoJugador.Instance.powerUpSlowBall, transform.position, Quaternion.identity);
+        }
+        if (Random.value <= probPowerUpMasPuntos)
+        {
+            MovimientoJugador.Instance.masPuntos = Instantiate(MovimientoJugador.Instance.powerUpMasPuntos, transform.position, Quaternion.identity);
         }
     }
 }
