@@ -177,8 +177,10 @@ public class VidasYPuntos : MonoBehaviour
     }
     public void ReiniciarBola()
     {
+        gameObject.SetActive(false);
         gameObject.transform.position = new Vector3(883.7f, -137f, 250.9f);
         playerTransform.transform.localPosition = new Vector3(883.7f, -139.6667f, 250.6f);
+        gameObject.SetActive(true);
         rb.constraints |= RigidbodyConstraints.FreezePositionX;
         if (playerTransform != null)
         {

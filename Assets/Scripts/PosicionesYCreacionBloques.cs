@@ -43,7 +43,11 @@ public class PosicionesYCreacionBloques : MonoBehaviour
     {
         for (int i = 0; i < posiciones.Length; i++)
         {
-            posiciones[i].SetActive(false);
+            if (posiciones[i].activeSelf == true)
+            {
+                posiciones[i].SetActive(false);
+            }
+            Debug.Log(i);
         }
         foreach (Transform child in bloques)
         {

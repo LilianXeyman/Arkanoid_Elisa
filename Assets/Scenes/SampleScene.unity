@@ -2545,7 +2545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidasYPuntos: {fileID: 893101892}
-  maxPuntuacion: {fileID: 0}
+  maxPuntuacion: {fileID: 14956716}
   canvasMenu: {fileID: 31998548}
   canvasMenuMenu: {fileID: 1600286992}
   canvasOpciones: {fileID: 1457582638}
@@ -17387,7 +17387,7 @@ MonoBehaviour:
   - {fileID: 7575399140808705042, guid: 07821f42be81c2a4c8f9ba6acdb8f4f0, type: 3}
   - {fileID: 2025015474041479433, guid: a5e64494b07ebb740b54afb21b7f309b, type: 3}
   bloques: {fileID: 664729223}
-  bloquesAGenerar: 25
+  bloquesAGenerar: 30
 --- !u!4 &1848304553
 Transform:
   m_ObjectHideFlags: 0
