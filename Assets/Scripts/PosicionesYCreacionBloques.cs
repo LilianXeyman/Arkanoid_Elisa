@@ -41,6 +41,14 @@ public class PosicionesYCreacionBloques : MonoBehaviour
 
     public void GenerarNiveles()
     {
+        for (int i = 0; i < posiciones.Length; i++)
+        {
+            posiciones[i].SetActive(false);
+        }
+        foreach (Transform child in bloques)
+        {
+            Destroy(child.gameObject);
+        }
         for (int i = 0; i < bloquesAGenerar ; i++)
         {
             GameObject selectedPrefab = prebasBloques[Random.Range(0, prebasBloques.Length)];

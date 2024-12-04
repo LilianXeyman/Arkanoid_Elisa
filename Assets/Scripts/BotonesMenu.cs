@@ -227,14 +227,6 @@ public class BotonesMenu : MonoBehaviour
         vidasYPuntos.ReiniciarBola();
         vidasYPuntos.pelotaEnJuego = false;
         Puntuaciones.instance.puntos = 0;
-        for (int i = 0; i < PosicionesYCreacionBloques.instance.posiciones.Length; i++)
-        {
-            PosicionesYCreacionBloques.instance.posiciones[i].SetActive(false);
-        }
-        foreach (Transform child in PosicionesYCreacionBloques.instance.bloques)
-        {
-            Destroy(child.gameObject);
-        }
         //Poner todas las pos en apagado
     }
     //Botones
@@ -249,8 +241,8 @@ public class BotonesMenu : MonoBehaviour
     { 
         comienzaElJuego=false;
         recordsPoner = true;
-        PosicionesYCreacionBloques.instance.GenerarNiveles();
         Reestablecer();
+        PosicionesYCreacionBloques.instance.GenerarNiveles();
         maxPuntuacion.puntuacionActual=0;
     }
     public void Opciones()

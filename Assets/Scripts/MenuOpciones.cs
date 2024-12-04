@@ -7,6 +7,9 @@ public class MenuOpciones : MonoBehaviour
 {
     [SerializeField]
     private AudioMixer audioMixer;
+
+    [SerializeField]
+    private AudioMixer efectosDeSonido;
     //Pantalla completa
     public void PantallaCompleta(bool pantallaCompleta)
     {
@@ -16,6 +19,10 @@ public class MenuOpciones : MonoBehaviour
     public void CambiarVolumen(float volumen)
     {
         audioMixer.SetFloat("Volumen", volumen);
+    }
+    public void CambiarVolumenEfectos(float volumen)
+    {
+        efectosDeSonido.SetFloat("Volumen", volumen);
     }
     // Start is called before the first frame update
     void Start()
