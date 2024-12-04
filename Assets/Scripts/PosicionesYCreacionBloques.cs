@@ -63,6 +63,7 @@ public class PosicionesYCreacionBloques : MonoBehaviour
                 if (bloquesAGenerar >= 200)
                 {
                     Debug.Log("límite");
+                    bloquesAGenerar = 25;
                     break;
                 }
             }

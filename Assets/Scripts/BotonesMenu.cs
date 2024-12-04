@@ -75,9 +75,20 @@ public class BotonesMenu : MonoBehaviour
     //Para controlar el apartado de Records
     [SerializeField]
     GameObject records;
+
+    //Cuentas para el modo niveles infinitos
+    public int cuentaNivelesInfinitos = 1;
+
+    [SerializeField]
+    GameObject numeroNivel;
+
+    [SerializeField]
+    TextMeshProUGUI cambiarNumNivel;
     
     void Start()
     {
+        //Pantalla en juego
+        LeanTween.scale(numeroNivel, Vector3.zero, 0);
         //canvasInicio.SetActive(true);
         canvasMenu.SetActive(true);
         canvasJuego.SetActive(false);
@@ -236,6 +247,28 @@ public class BotonesMenu : MonoBehaviour
         vidasYPuntos.BolaReanudar();
         canvasMenu.SetActive(false);
         canvasJuego.SetActive(true);
+    }
+    public void NivelesInfinitos()
+    {
+        cuentaNivelesInfinitos = cuentaNivelesInfinitos + 1;
+        cambiarNumNivel.text="Nivel "+cuentaNivelesInfinitos.ToString();
+        comienzaElJuego = false;
+        recordsPoner = true;
+        canvasMenu.SetActive(false);
+        canvasJuego.SetActive(true);
+        LeanTween.scale(numeroNivel, Vector3.one, 0.5f).setEase(animCurve).setOnComplete(() => {
+            LeanTween.scale(numeroNivel, Vector3.zero, 0.5f);
+        });
+        vidasYPuntos.canvasMuerte.SetActive(false);
+        Puntuaciones.instance.canvasVictoria.SetActive(false);
+        tiempo = true;
+        vidasYPuntos.cuentaVidas = 3;
+        vidasYPuntos.imagen1Vidas.enabled = true;
+        vidasYPuntos.imagen2Vidas.enabled = true;
+        vidasYPuntos.imagen3Vidas.enabled = true;
+        vidasYPuntos.ReiniciarBola();
+        vidasYPuntos.pelotaEnJuego = false;
+        PosicionesYCreacionBloques.instance.GenerarNiveles();
     }
     public void NuevoJuego()
     { 
