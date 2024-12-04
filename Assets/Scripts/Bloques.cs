@@ -6,8 +6,12 @@ using UnityEngine.UI;
 
 public class Bloques : MonoBehaviour
 {
+    //Para la creación de PowerUps
+    [SerializeField]
+    GameObject powerUpSlowBall;
+    [SerializeField]
+    float probPowerUpSlowBall = 0.2f;
     //public static Bloques instance; No le puedo poner el singleton porque no compila
-    //float timeCounted = 0.0f;
     [SerializeField]
     MaxPuntuacion maxPuntuacion;
 
@@ -23,44 +27,14 @@ public class Bloques : MonoBehaviour
     [SerializeField]
     public int puntosBloques;
 
-    //Para la música
-    /*[SerializeField]
-    public AudioClip bloqueRotoSFX;*/
-
-    //public AudioSource audioSource;
-
-    /*[SerializeField]
-    TextMeshProUGUI sumaDePuntos;
-
-    /*private void Awake()
-    {
-        sumaDePuntos.text = "+ 100";
-        //Configurar la etiqueta
-    }
-   /* private void Update()
-    {
-        if (timeCounted > 0f)
-        {
-            timeCounted -= Time.deltaTime;
-        }
-        else
-        {
-            //Destroy(textoInstanciado);
-            // Desactivar tu gameObject con texto
-            //sumaDePuntos.gameObject.SetActive(false);//Buscar otra forma
-        }
-    }*/
     //Para detectar las colisiones de la bola con los bloques y cambiar el material
     public void OnCollisionEnter(Collision collision)
     {
         vidaBloques = vidaBloques - 1;
-        //AudioSource.PlayClipAtPoint(bloqueRotoSFX, transform.position);
+        CrearPowerUp();
         Puntuaciones.instance.puntos += 100;
         MaxPuntuacion.Instance.AñadirPuntos(MaxPuntuacion.Instance.record);
         GameManager.instance.Sumar100();
-        //MostrarPuntos();//Llama a la función MostrarPuntos en donde te cambia el tiempo en el que aparece en pantalla la suma y lo activa
-        //Profe
-        //timeCounted = 0.5f;
         // Activar tu gameObject con texto
         gameObject.GetComponent<MeshRenderer>().material = materiales[vidaBloques];
         if (vidaBloques <= 0)
@@ -69,18 +43,11 @@ public class Bloques : MonoBehaviour
             Puntuaciones.instance.BlockDestroyed();
         }
     }
-    /*public void MostrarPuntos()
+    public void CrearPowerUp()//Sirve para crear el PowerUp dependiendo de la probabilidad en el lugar de la colisión
     {
-        timeCounted = 0.5f;
-        // Activar tu gameObject con texto
+        if (Random.value <= probPowerUpSlowBall)
+        {
+            Instantiate(powerUpSlowBall, transform.position,Quaternion.identity);
+        }
     }
-    IEnumerator apagarSumaPuntos() 
-    {
-       // GameObject TEXTO = GameObject.Find("Puntos Ganados");
-        GameObject TEXTOINSTANCIADO = Instantiate(sumaDePuntos, TEXTO.transform.position, Quaternion.identity);
-        sumaDePuntos.gameObject.SetActive(true);
-        sumaDePuntos.text = "100";
-        yield return new WaitForSeconds(0.25f);
-        sumaDePuntos.gameObject.SetActive(false);
-    }*/
 }

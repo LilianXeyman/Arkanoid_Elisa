@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovimientoJugador : MonoBehaviour
 {
+    public static MovimientoJugador Instance;
     // Variables para el movimiento del jugador
     [SerializeField]
     BotonesMenu botonesMenu;
@@ -11,7 +12,7 @@ public class MovimientoJugador : MonoBehaviour
     private float movimientoX;
 
     [SerializeField]
-    private float velJugador;
+    public float velJugador;
 
     [SerializeField]
     private float min=26.8f;
@@ -20,6 +21,17 @@ public class MovimientoJugador : MonoBehaviour
 
     private Rigidbody paloRb;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     void Start()
     {
         paloRb = GetComponent<Rigidbody>();
@@ -37,6 +49,13 @@ public class MovimientoJugador : MonoBehaviour
             newPosX = Mathf.Clamp(newPosX, min, max);//Clamp hace las multiplicaciones
             //transform.position = new Vector3(newPosX, transform.position.y, transform.position.z);
             paloRb.velocity = new Vector3(movement*velJugador, 0, 0);//Si pongo el Time*deltaTime va con lag. Preguntar si se puede quitar
+        }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("SlowBall"))
+        {
+            PowerUps.Instance.SlowBall();
         }
     }
 }

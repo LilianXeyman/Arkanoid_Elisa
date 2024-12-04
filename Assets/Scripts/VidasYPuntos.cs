@@ -14,7 +14,7 @@ public class VidasYPuntos : MonoBehaviour
     [SerializeField]
     Vector3 inpulsoBola;
     [SerializeField]
-    float velBola;
+    public float velBola;
 
     [SerializeField]
     GameObject bola;

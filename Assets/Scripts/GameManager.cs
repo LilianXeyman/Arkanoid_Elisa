@@ -10,11 +10,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public Image puntos1, puntos2, puntos3, puntos4;
 
-    /*public float tiempoPuntos1 = 0;
-    public float tiempoPuntos2 = 0;
-    public float tiempoPuntos3 = 0;
-    public float tiempoPuntos4 = 0;*/
-
     [SerializeField]
     LeanTweenType animacionImagenes;
 
@@ -38,26 +33,6 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        /*tiempoPuntos1 = tiempoPuntos1 - Time.deltaTime;
-        if (tiempoPuntos1 <= 0)
-        {
-            puntos1.enabled = false;
-        }
-        tiempoPuntos2 = tiempoPuntos2 - Time.deltaTime;
-        if (tiempoPuntos2 <= 0)
-        {
-            puntos2.enabled = false;
-        }
-        tiempoPuntos3 = tiempoPuntos3 - Time.deltaTime;
-        if (tiempoPuntos3 <= 0)
-        {
-            puntos3.enabled = false;
-        }
-        tiempoPuntos4 = tiempoPuntos4 - Time.deltaTime;
-        if (tiempoPuntos4 <= 0)
-        {
-            puntos4.enabled = false;
-        }*/
     }
     public void Sumar100()
     {
