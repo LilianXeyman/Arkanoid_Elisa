@@ -10,7 +10,7 @@ public class VidasYPuntos : MonoBehaviour
 
     [SerializeField]
     public int cuentaVidas = 3;//Esto se irá modificando en base a los PowerUps
-
+    int vidasInicialesOriginales;
     [SerializeField]
     Vector3 inpulsoBola;
     [SerializeField]
@@ -39,7 +39,7 @@ public class VidasYPuntos : MonoBehaviour
     public Image imagen1Vidas, imagen2Vidas, imagen3Vidas;
 
     //Sonido
-    public AudioSource musicaFondo;
+    public AudioSource musicaFondo;//efectosDeSonido
     public AudioClip playerSound, blockSound, wallSound, ballResSound;
 
     //Para las vidas de los bloques
@@ -71,6 +71,7 @@ public class VidasYPuntos : MonoBehaviour
 
     void Start()
     {
+        vidasInicialesOriginales = cuentaVidas;
         rb = GetComponent<Rigidbody>();
         canvasMuerte.SetActive(false);
     }
@@ -95,48 +96,6 @@ public class VidasYPuntos : MonoBehaviour
                 }
             }
         }
-        //Intento1
-        /*if (botonesMenu.tiempo == true)
-        {
-            if (!pelotaEnJuego && Input.GetButtonUp("Jump"))
-            {
-                rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
-                Debug.Log("Press Space");
-                pelotaEnJuego = true;
-                transform.parent = null;
-                if (velocidadPrevia != Vector3.zero)
-                {
-                    rb.velocity = velocidadPrevia;
-                    rb.velocity = direccionPrevia * velocidadPrevia.magnitude;
-                }
-                else 
-                {
-                    rb.AddForce(new Vector3(5f, 10f, 0f) * velBola, ForceMode.Impulse);//Problemas con el rozamiento. La bola se va frenando.
-                }
-            }
-            if (pelotaEnJuego == true)
-            {
-                if (rb.velocity.magnitude != velBola)//Esto no se si funciona o si está bien
-                {
-                    rb.velocity = rb.velocity.normalized * velBola;
-                }
-            }
-            if (pelotaEnJuego)
-            {
-                rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
-            }
-        }
-        else
-        {
-            rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
-            //rb.velocity = Vector3.zero;
-            if (pelotaEnJuego)
-            {
-                velocidadPrevia = rb.velocity;
-                direccionPrevia = rb.velocity.normalized;
-            }
-        }
-        */
         //Va desactivando las imagenes que representan las vidas
         if (cuentaVidas == 2)
         {
@@ -151,17 +110,14 @@ public class VidasYPuntos : MonoBehaviour
         {
             imagen3Vidas.enabled = false;
         }
+
     }
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        rb.velocity=rb.velocity.normalized*velBola;
-    }*/
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Muerte"))
         {
             cuentaVidas = cuentaVidas - 1;
-            if (cuentaVidas < 3)
+            if (cuentaVidas < vidasInicialesOriginales)
             {
                 ReiniciarBola();
                 pelotaEnJuego = false;

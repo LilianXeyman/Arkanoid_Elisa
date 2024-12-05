@@ -14,6 +14,9 @@ public class PowerUps : MonoBehaviour
 
     [SerializeField]
     float duracion=0;
+
+    [SerializeField]
+    float duracionInvertirControles = 0;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -41,6 +44,12 @@ public class PowerUps : MonoBehaviour
             Debug.Log("Restablecer velocidad");
             vidasYPuntos.velBola = 30;
         }
+        duracionInvertirControles = duracionInvertirControles - Time.deltaTime;
+        if (duracionInvertirControles <= 0)
+        {
+            Debug.Log("Restablecer controles");
+            MovimientoJugador.Instance.controlesInvertidos = false;
+        }
     }
     public void SlowBall()
     {
@@ -55,5 +64,10 @@ public class PowerUps : MonoBehaviour
         {
             LeanTween.scale(quinientos, Vector3.zero, 0.1f).setEase(LeanTweenType.easeOutQuint);
         });
+    }
+    public void InvertirControles1()
+    {
+        duracionInvertirControles = 10;
+        MovimientoJugador.Instance.InvertirControles2();
     }
 }

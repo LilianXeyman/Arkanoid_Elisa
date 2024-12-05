@@ -49,6 +49,7 @@ public class MaxPuntuacion : MonoBehaviour
         {
             record = puntuacionActual;
             PlayerPrefs.SetInt("Record", record);
+            PlayerPrefs.Save();//Te guarda siempre la puntuacion
             Debug.Log("¡Nuevo Record guardado: " + record);
         }
         añadirPuntosEvent?.Invoke(this, new AñadirPuntosEventArgs { puntuacionActualEvent = puntuacionActual, recordEvent = record });

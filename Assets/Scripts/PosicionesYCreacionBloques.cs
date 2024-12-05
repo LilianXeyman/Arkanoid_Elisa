@@ -26,7 +26,10 @@ public class PosicionesYCreacionBloques : MonoBehaviour
         {
             instance = this;
         }
-        else Destroy(this);
+        else
+        {
+            Destroy(this);
+        }
     }
     void Start()
     {
@@ -64,7 +67,7 @@ public class PosicionesYCreacionBloques : MonoBehaviour
                 {
                     Debug.Log("límite");
                     bloquesAGenerar = 25;
-                    break;
+                    //break;
                 }
             }
             else

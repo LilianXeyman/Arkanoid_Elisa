@@ -118,8 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66f60d1582a1e8418f470d521d8fcf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpSlowBall: {fileID: 97772981657588427, guid: 5789b1dc482397a4f873bb9897a1c999, type: 3}
   probPowerUpSlowBall: 0.2
+  probPowerUpMasPuntos: 0.03
+  probPowerUpInvertirControles: 0.3
   maxPuntuacion: {fileID: 0}
   gameManager: {fileID: 0}
   vidaBloques: 1
